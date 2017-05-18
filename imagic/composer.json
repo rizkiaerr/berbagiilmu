@@ -1,0 +1,31 @@
+{
+    "name": "imagick",
+    "version": "3.4.1",
+    "type": "extension",
+    "license": [
+        "PHP License"
+    ],
+    "authors": [
+        {
+            "name": "Mikko Koppanen",
+            "email": "mkoppanen@php.net"
+        },
+        {
+            "name": "Dan Ackroyd",
+            "email": "danack@php.net"
+        },
+        {
+            "name": "Scott MacVicar",
+            "email": "scottmac@php.net"
+        }
+    ],
+    "description": "Provides a wrapper to the ImageMagick library.",
+    "extra": {
+        "configure-options": {
+            "with-imagick": {
+                "default": "autodetect",
+                "prompt": "Please provide the prefix of Imagemagick installation"
+            }
+        }
+    }
+}

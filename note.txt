@@ -1,0 +1,51 @@
+v2
+- popup login gak muncul
+
+v3
+- popup login gak muncul [fix] 
+
+v4
+- perbaikan page 'about'
+- perbaikan page 'contact'
+- penghapusan page 'content.php'
+
+v5
+- pergantian nama 'about' menjadi 'about us'
+- penambahan layout di page 'about us'
+- penambahan layout di page 'contact us'
+- penambahan google maps di page 'contact us'
+
+v6
+- penambahan login sebagai admin, member, dan guest
+- pembatasan sign up, hanya tersedia untuk guest
+
+v7
+- penambahan fitur 'logout'
+- penambahan fitur 'sign up' tanpa adanya opsi 'sign in'
+
+------------------------------------------------------------
+--------------
+@aris:
+ - pengaturan
+ - about us
+--------------
+>> pengaturan
+	+ data pribadi
+		- nama lengkap
+		- jenis kelamin
+		- tanggal lahir
+		- alamat
+		- email
+		- no. telepon
+	+ informasi login
+		- nama user
+		+ update password
+			- email
+			- password lama
+			- password baru
+			- konfirmasi password baru
+		
+
+>> about us
+	+ combine about us + contact
+		
