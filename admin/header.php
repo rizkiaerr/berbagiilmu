@@ -5,7 +5,7 @@
 <?php 
     session_start(); 
 //    include 'cek.php';
-  require 'config.php';
+  include 'config.php';
 ?>
 
     <meta charset="utf-8">
@@ -34,7 +34,7 @@
     <![endif]-->
 
     <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
+ <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <link href="../css/bootstrap.css" rel="stylesheet">
@@ -92,7 +92,7 @@
 					</div>
 				</form>
                 <ul class="nav navbar-nav navbar-right">
-					<li><a href="#" role="button" data-toggle="modal"><span class="glyphicon glyphicon-user"></span> Daftar </a></li>
+					<li><a href="daftar.php" ><span class="glyphicon glyphicon-user"></span> Daftar </a></li>
 					<li><a href="#" role="button" data-toggle="modal" data-target="#login-modal"  ><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
 				</ul>
                 </ul>

@@ -1,16 +1,67 @@
-<?php
-  include "header.php";
+<head>
+<?php 
+    session_start(); 
+//    include 'cek.php';
+  include 'config.php';
 ?>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Berbagi Ilmu</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/modern-business.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/modal-login.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+ <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../datatables/css/jquery.dataTables.css">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../datatables/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+
+    <!-- Script to Activate the Carousel -->
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</head>
+
 
 <div class="container">
   <h2>Crud PHP 7 Menggunakan Modal Bootstrap (Popup)</h2>
   <p>Bootstrap Modal  (Popup) By Aguzrybudy, Selasa 19 April 2016</p>
-  <p><a href="#" class="btn btn-success" data-target="#ModalAdd" data-toggle="modal">Add Data</a></p>      
+  <p><a href="#" class="btn btn-success" data-target="#ModalAdd" data-toggle="modal">Daftar</a></p>      
 
 <table id="mytable" class="table table-bordered">
     <thead>
       <th>No</th>
       <th>Nama</th>
+      <th>Jenis Kelamin</th>
       <th>Tanggal Lahir</th>
       <th>Alamat</th>
       <th>Email</th>
@@ -32,13 +83,15 @@
 ?>
   <tr>
       <td><?php echo $no; ?></td>
+      <!--<td><?php echo  $r['member_id']; ?></td>-->
       <td><?php echo  $r['member_nama']; ?></td>
+      <td><?php echo  $r['member_jk']; ?></td>
       <td><?php echo  $r['member_ttl']; ?></td>
       <td><?php echo  $r['member_alamat']; ?></td>
       <td><?php echo  $r['member_email']; ?></td>
       <td>
          <a href="#" class='open_modal' id='<?php echo  $r['member_id']; ?>'>Edit</a>
-         <a href="#" onclick="confirm_modal('proses_delete.php?&modal_id=<?php echo  $r['member_id']; ?>');">Delete</a>
+         <a href="#" onclick="confirm_modal('proses_delete.php?&member_id=<?php echo  $r['member_id']; ?>');">Delete</a>
       </td>
   </tr>
 <?php } ?>
@@ -60,8 +113,8 @@
 
         <div class="modal-body">
 
-          <form action="proses_edit.php" name="modal_popup" enctype="multipart/form-data" method="POST">
-            
+          <form action="proses_save.php" name="modal_popup" enctype="multipart/form-data" method="POST">
+                
                 <div class="form-group" style="padding-bottom: 20px;">
                   <label for="Nama Member">Nama Member</label>
                     <input type="text" name="member_nama"  class="form-control" placeholder="Nama Member" required/>
@@ -148,7 +201,7 @@
     <div class="modal-content" style="margin-top:100px;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" style="text-align:center;">Are you sure to delete this information ?</h4>
+        <h4 class="modal-title" style="text-align:center;">Apakah anda yakin akan menghapus data ini? ?</h4>
       </div>
                 
       <div class="modal-footer" style="margin:0px; border-top:0px; text-align:center;">
@@ -186,6 +239,7 @@
       $('#modal_delete').modal('show', {backdrop: 'static'});
       document.getElementById('delete_link').setAttribute('href' , delete_url);
     }
+    
 </script>
 
 <?php

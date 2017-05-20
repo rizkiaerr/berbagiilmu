@@ -26,6 +26,7 @@ $(document).ready(function() {
     <thead>
       <th>No</th>
       <th>Nama</th>
+      <th>Jenis Kelamin</th>
       <th>Tanggal Lahir</th>
       <th>Alamat</th>
       <th>Email</th>
@@ -48,6 +49,7 @@ $(document).ready(function() {
   <tr>
       <td><?php echo $no; ?></td>
       <td><?php echo  $r['member_nama']; ?></td>
+      <td><?php echo  $r['member_jk']; ?></td>
       <td><?php echo  $r['member_ttl']; ?></td>
       <td><?php echo  $r['member_alamat']; ?></td>
       <td><?php echo  $r['member_email']; ?></td>
@@ -75,7 +77,7 @@ $(document).ready(function() {
 
         <div class="modal-body">
 
-          <form action="proses_edit.php" name="modal_popup" enctype="multipart/form-data" method="POST">
+          <form action="proses_save.php" name="modal_popup" enctype="multipart/form-data" method="POST">
             
                 <div class="form-group" style="padding-bottom: 20px;">
                   <label for="Nama Member">Nama Member</label>
@@ -103,7 +105,7 @@ $(document).ready(function() {
                 </div>
 
               <div class="modal-footer">
-                  <button class="btn btn-success" type="submit">
+                  <button class="btn btn-success" type="submit" name="confirm">
                       Confirm
                   </button>
 

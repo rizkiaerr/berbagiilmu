@@ -11,10 +11,10 @@
 					<div class="item active">
 						<div class="row">
 							<div class="col-sm-2"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
 							<div class="col-sm-2"></a></div>									
 						</div>
 						<!--/row-->
@@ -24,10 +24,10 @@
 					<div class="item">
 						<div class="row">
 							<div class="col-sm-2"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
 							<div class="col-sm-2"></a></div>	
 						</div>
 						<!--/row-->
@@ -37,10 +37,10 @@
 					<div class="item">
 						<div class="row">
 							<div class="col-sm-2"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
 							<div class="col-sm-2"></a></div>	
 						</div>
 						<!--/row-->
@@ -74,10 +74,10 @@
 					<div class="item active">
 						<div class="row">
 							<div class="col-sm-2"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
 							<div class="col-sm-2"></a></div>									
 						</div>
 						<!--/row-->
@@ -87,10 +87,10 @@
 					<div class="item">
 						<div class="row">
 							<div class="col-sm-2"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
 							<div class="col-sm-2"></a></div>	
 						</div>
 						<!--/row-->
@@ -100,10 +100,10 @@
 					<div class="item">
 						<div class="row">
 							<div class="col-sm-2"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="#x" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
+							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
 							<div class="col-sm-2"></a></div>	
 						</div>
 						<!--/row-->

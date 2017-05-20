@@ -1,6 +1,8 @@
 <?php 
 	include "header.php";
 ?>
+<br><br>
+
 <!-- Page Content -->
 <div class="container">
 
@@ -34,13 +36,22 @@
                 	</div>
         </h3>
 
+<?php
+    require "config.php";
+//    $member_id=$_GET['member_id'];
+    $modal=mysqli_query($link,"SELECT * FROM member WHERE member_id=2");
+    while($r=mysqli_fetch_array($modal)){
+?>
+
 		<div>
             <div class="row">
                 <div class="col-xs-5 col-sm-6">
-                    Nama Lengkap                            
+                    Nama Lengkap
                 </div>
                 <div class="col-xs-7 col-sm-6">
-                    Dl Rhyraim                            
+                    <?php
+                    echo  $r['member_nama'];
+                    ?>                            
                 </div>
             </div>
 
@@ -49,17 +60,9 @@
                     Tanggal Lahir                            
                 </div>
                 <div class="col-xs-7 col-sm-6">
-                    17 Agustus 1945                            
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-5 col-sm-6">
-                	  Jenis Kelamin  
-                </div>
-                <div class="col-xs-7 col-sm-6">
-                      Perempuan                            
-
+                    <?php
+                    echo  $r['member_ttl']; 
+                    ?>                            
                 </div>
             </div>
 
@@ -68,7 +71,9 @@
                     Alamat                            
                 </div>
                 <div class="col-xs-7 col-sm-6">
-                    Jl. Dipatiukur No.122 Bandung                            
+                       <?php
+                    echo  $r['member_alamat']; 
+                    ?>                           
                 </div>
             </div>
 
@@ -77,7 +82,9 @@
                     No. Telepon                            
                 </div>
                 <div class="col-xs-7 col-sm-6">
-                    081212122335                            
+                    <?php
+                    echo  $r['member_tlp']; 
+                    ?>                 
                 </div>
             </div>
 
@@ -86,7 +93,9 @@
                     Email                            
                 </div>
                 <div class="col-xs-7 col-sm-6">
-                    datagame12@gmail.com                            
+                    <?php
+                    echo  $r['member_email']; 
+                    ?>                           
                 </div>
             </div>
 
@@ -117,6 +126,10 @@
 
 		</div>
 	</div>
+
+<?php 
+} 
+?>
 </div>
 </div>
 <!-- end Page Content -->
@@ -186,17 +199,15 @@
     <script src="./js/contact_me.js"></script>
 </div>
 
-<!-- Modal Popup untuk Edit--> 
+<!-- Modal Popup untuk Edit
 <div id="ModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
 </div>
 
 
-<?php 
-	include "footer.php";
-?>
 
-<!-- Javascript untuk popup modal Edit--> 
+
+<!-- Javascript untuk popup modal Edit
 <script type="text/javascript">
    $(document).ready(function () {
    $(".open_modal").click(function(e) {
@@ -213,3 +224,13 @@
         });
       });
 </script>
+
+<?php 
+//    include "footer.php";
+?>
+--> 
+
+</center>
+</div>
+</div>
+</div>
