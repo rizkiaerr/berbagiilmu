@@ -1,13 +1,10 @@
-<!--
-Author : Aguzrybudy
-Created : Selasa, 19-April-2016
-Title : Crud Menggunakan Modal Bootsrap
--->
 <?php
     require "header.php";
 ?>
 <br><br>
+
 <div class="container">
+
 <div class="row">
    <div class="col-lg-12">
       <h2><span style="margin-left:10px" class="glyphicon glyphicon-console"></span>  About Us </h2>
@@ -25,12 +22,12 @@ Title : Crud Menggunakan Modal Bootsrap
         <!-- /.row -->
   </div>
 </div>
-
 <!-- /.row -->  
+
 <br/><br/>
+
 <table width="100%" border="0" cellpadding="1" cellspacing="2">
   <tbody>
-  
   <tr>
     <td valign="top">&nbsp;</td>
     <td colspan="3" valign="top">&nbsp;</td>
@@ -62,10 +59,10 @@ Title : Crud Menggunakan Modal Bootsrap
 <br><br>
 <!-- /about us -->
 
+
 <div class="row">
-  <div class="col-lg-12">
-  <hr/>
-  <h2><span  class="glyphicon glyphicon-cloud"></span>  Contact</h2>
+   <div class="col-lg-12">
+      <h2><span  class="glyphicon glyphicon-cloud"></span>  Contact</h2>
       <button  style="margin-bottom:10px" data-toggle="modal" data-target="#myModal" class="btn btn-info col-md-2">
         <span class="glyphicon glyphicon-gift"></span>  Send us a Message
       </button>
@@ -88,7 +85,7 @@ Title : Crud Menggunakan Modal Bootsrap
                 <hr>
                 <table border="0" align="center" width="470">
                 <tr>
-                  <td> <i class="fa fa-male"></i>
+                    <td> <i class="fa fa-male"></i>
                         <abbr title="Person">
                           CP    
                         </abbr>
@@ -96,16 +93,16 @@ Title : Crud Menggunakan Modal Bootsrap
                     <td>
                      : Melrose Place
                     </td>
-                 </tr>
-                 <tr></tr>
-                 <tr>
+                </tr>
+                <tr></tr>
+                <tr>
                     <td> <i class="fa fa-phone"></i>
                         <abbr title="Phone">
-                          Phone  
+                            Phone  
                         </abbr>
                     </td>
                     <td>
-               : (123) 456-7890
+                     : (123) 456-7890
                     </td>
                 </tr>
                 <tr>
@@ -141,6 +138,7 @@ Title : Crud Menggunakan Modal Bootsrap
                 </table>
                 
                 <br><center>
+
                 <ul class="list-unstyled list-inline list-social-icons">
                     <li>
                         <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -156,6 +154,7 @@ Title : Crud Menggunakan Modal Bootsrap
                     </li>
                 </ul>
                 </center>
+
             </div>
             <!-- /Contact Details Column -->
         </div>
@@ -166,7 +165,6 @@ Title : Crud Menggunakan Modal Bootsrap
 
 <div class="row">
   <div class="col-lg-12">
-  <hr/>
       <h2><span style="margin-left:10px" class="glyphicon glyphicon-sunglasses"></span>  Ini Kami </h2>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
@@ -291,9 +289,8 @@ Title : Crud Menggunakan Modal Bootsrap
   require "footer.php";
 ?>
 
-        <!-- Contact Form -->
-        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-
+<!-- Contact Form -->
+<!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
 <div id="myModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -305,7 +302,6 @@ Title : Crud Menggunakan Modal Bootsrap
       <div class="modal-body">
           <div class="row">
               <div class="col-md-12" align="left">
-         
                 <form name="sentMessage" id="contactForm" novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
@@ -339,18 +335,18 @@ Title : Crud Menggunakan Modal Bootsrap
                     </center>
                 </form>
             </div>
-
         </div>
         <!-- /.row -->
-
-                   
-    <!-- Contact Form JavaScript -->
-    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="./js/jqBootstrapValidation.js"></script>
-    <script src="./js/contact_me.js"></script>
-</div>
-</center>
-</div>
-</div>
+        <!-- Contact Form JavaScript -->
+        <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+        <script src="./js/jqBootstrapValidation.js"></script>
+        <script src="./js/contact_me.js"></script>
+    </div>
+    <!-- /modal-body -->
+    </center>
+    </div>
+    <!-- /modal-content-->
+    </div>
+    <!--/modal-dialog-->
 </div>
 <!-- /Contact Form -->

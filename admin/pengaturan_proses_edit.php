@@ -1,8 +1,3 @@
-<!--
-Author : Aguzrybudy
-Created : Selasa, 19-April-2016
-Title : Crud Menggunakan Modal Bootsrap
--->
 <?php
 	include "config.php";
 	$member_id		 = $_POST['member_id'];
@@ -15,5 +10,5 @@ Title : Crud Menggunakan Modal Bootsrap
 
 	//$description = $_POST['description'];
 	$modal=mysqli_query($link,"UPDATE member SET member_nama = '$member_nama',member_jk = '$member_jk',member_ttl = '$member_ttl',member_alamat = '$member_alamat',member_email = '$member_email',member_password = '$member_password'  WHERE member_id = '$member_id'");
-	header('location:member.php');
+	header('location:pengaturan.php');
 ?>

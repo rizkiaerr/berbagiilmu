@@ -78,28 +78,9 @@
 					</div>
 				</form>
                 <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user-times fa-fw"></i>
-                    Guest
-                    <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                    <li>
-                        <a href="login.php">
-                        <i class="fa fa-sign-in fa-fw"></i>
-                        Login
-                        </a>
-                    </li>
-                    <li>
-                        <a href="daftar.php">
-                        <i class="fa fa-pencil fa-fw"></i>
-                        Register
-                        </a>
-                    </li>
-                    </ul>
-                </li>
-                </ul>
+					<li><a href="daftar.php" ><span class="glyphicon glyphicon-user"></span> Daftar </a></li>
+					<li><a href="#" role="button" data-toggle="modal" data-target="#login-modal"  ><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+				</ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -107,7 +88,7 @@
 
     </nav>
     <!--/navbar-->
-        
+
  <!-- BEGIN # MODAL LOGIN -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
@@ -118,26 +99,19 @@
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </button>
                 </div>
-
-<?php 
-    if(isset($_GET['pesan'])){
-        if($_GET['pesan'] == "gagal"){
-            echo "<script type='text/javascript'>alert('Login Gagal! Email atau Password Salah ')</script>";
-        }
-   }
-?>        
                 
                 <!-- Begin # DIV Form -->
                 <div id="div-forms">
+                
                     <!-- Begin # Login Form -->
-                    <form action="login_act.php" method="post">
+                    <form id="login-form">
                         <div class="modal-body">
                             <div id="div-login-msg">
                                 <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-login-msg">Type your Email and password.</span>
+                                <span id="text-login-msg">Type your username and password.</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Masukkan Email Anda" name="member_email">
-                            <input type="password" class="form-control" placeholder="Password" name="member_password">
+                            <input name="login_username" class="form-control" type="text" placeholder="Username.." required/>
+                            <input name="login_password" class="form-control" type="password" placeholder="Password.." required/>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"/> Remember me

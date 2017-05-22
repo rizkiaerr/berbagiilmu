@@ -1,8 +1,3 @@
-<!--
-Author : Aguzrybudy
-Created : Selasa, 19-April-2016
-Title : Crud Menggunakan Modal Bootsrap
--->
 <?php
     require "config.php";
 	$member_id=$_GET['member_id'];
@@ -19,12 +14,20 @@ Title : Crud Menggunakan Modal Bootsrap
         </div>
 
         <div class="modal-body">
-        	<form action="proses_edit.php" name="modal_popup" enctype="multipart/form-data" method="POST">
+        	<form action="pengaturan_proses_edit.php" name="modal_popup" enctype="multipart/form-data" method="POST">
         		
                 <div class="form-group" style="padding-bottom: 20px;">
                   <label for="Nama Member">Nama Member</label>
                     <input type="hidden" name="member_id"  class="form-control" value="<?php echo $r['member_id']; ?>" />
                     <input type="text" name="member_nama"  class="form-control" value="<?php echo $r['member_nama']; ?>"/>
+                </div>
+
+                <div class="form-group" style="padding-bottom: 20px;">
+                  <label for="Jenis Kelamin">Jenis Kelamin</label>
+                    <br>
+                    <input type="radio" name="member_jk" value="L" /> Laki-Laki
+                    <br>
+                    <input type="radio" name="member_jk" value="P" /> Perempuan
                 </div>
 
                 <div class="form-group" style="padding-bottom: 20px;">

@@ -2,12 +2,6 @@
   include "header.php";
  ?>
 
-<link href="css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="datatables/css/jquery.dataTables.css">
-<link href="css/bootstrap.css" rel="stylesheet">
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="datatables/js/jquery.dataTables.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $('#datatable').DataTable();
@@ -26,30 +20,20 @@ $(document).ready(function() {
     <thead>
       <th>No</th>
       <th>Nama</th>
-      <th>Jenis Kelamin</th>
       <th>Tanggal Lahir</th>
       <th>Alamat</th>
       <th>Email</th>
       <th></th>
     </thead>
 <?php 
-  //menampilkan data mysqli
- // $user = "root";
- // $password = "";
- // $database = "berbagiilmu";
-
-  //$link=mysqli_connect('localhost',$user,$password,$database);
-
   $no = 0;
   $modal=mysqli_query($link,"SELECT * FROM member");
   while($r=mysqli_fetch_array($modal)){
-  $no++;
-       
+  $no++;       
 ?>
   <tr>
       <td><?php echo $no; ?></td>
       <td><?php echo  $r['member_nama']; ?></td>
-      <td><?php echo  $r['member_jk']; ?></td>
       <td><?php echo  $r['member_ttl']; ?></td>
       <td><?php echo  $r['member_alamat']; ?></td>
       <td><?php echo  $r['member_email']; ?></td>
@@ -59,11 +43,10 @@ $(document).ready(function() {
       </td>
   </tr>
 <?php } ?>
- 
+ </table>
 
-
-</table>
 </div>
+<!--/container-->
 
 <!-- Modal Popup untuk Add--> 
 <div id="ModalAdd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -110,50 +93,21 @@ $(document).ready(function() {
                   </button>
 
                   <button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
-                    Cancel
+                      Cancel
                   </button>
               </div>
 
-              </form>
+        </form>
 
-<!--
-          <form action="proses_save.php" name="modal_popup" enctype="multipart/form-data" method="POST">
-            
-                <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Modal Name">Modal Name</label>
-                  <input type="text" name="modal_name"  class="form-control" placeholder="Modal Name" required/>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Description">Description</label>
-                   <textarea name="description"  class="form-control" placeholder="Description" required/></textarea>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Date">Date</label>
-                  <input type="text" name="date"  class="form-control" plcaceholder="Timestamp" disabled value="Timestamp" required/>
-                </div>
-
-              <div class="modal-footer">
-                  <button class="btn btn-success" type="submit">
-                      Confirm
-                  </button>
-
-                  <button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
-                    Cancel
-                  </button>
-              </div>
-
-              </form>
--->
-           
-
-            </div>
-
-           
-        </div>
+       </div>
+       <!--/modal-body-->     
+      </div>
+      <!--/modal-content-->
     </div>
+<!--/modal-dialog-->
 </div>
+<!--/modal-add-->
+
 <!-- Modal Popup untuk Edit--> 
 <div id="ModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
@@ -175,6 +129,7 @@ $(document).ready(function() {
     </div>
   </div>
 </div>
+<!--/modal-delete-->
 
 <script type="text/javascript">
 $(document).ready(function () {
@@ -202,7 +157,7 @@ $(document).ready(function () {
 
 });
 </script>
-</body>
+
 <?php
   include "footer.php";
 ?>

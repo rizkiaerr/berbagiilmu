@@ -6,7 +6,7 @@
     <div class="container">
 		<div class="col-sm-9">
 			<h2 class="page-header">
-				Pembuatan Aplikasi Presentasi
+				Baca Buku
 			</h2>
 			<embed width="800" height="700" src="../buku/Teknologi/buku1.pdf" type="application/pdf"></embed>
 		</div>
@@ -23,7 +23,10 @@
 				echo $im;
 			?>		
 		</div>
+
 	</div>
+	<!--/container-->
+
 <?php
 	include 'footer.php';
 ?>
