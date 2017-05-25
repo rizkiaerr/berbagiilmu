@@ -12,16 +12,11 @@
                 <input type="text" name="member_nama" placeholder="Masukan Nama Lengkap anda.." class="form-control">
               </div>
 
-              <div class="col-sm-6 form-group">
-                <label>Member ID</label>
-                <input type="text" name="member_id" placeholder="Masukan Nama Lengkap anda.." class="form-control">
+              <div class="col-sm-2 form-group">
+                <label>Tanggal Lahir</label>
+                <input type="date" name="member_ttl" placeholder="Masukan tanggal lahir anda.." class="form-control">
               </div>
-                          </div>
-          
-          <div class="form-group">
-            <label>Tanggal Lahir</label>
-            <input type="date" name="member_ttl" placeholder="Masukan tanggal lahir anda.." class="form-control">
-          </div>            
+            </div>            
             
           <div class="form-group">
             <label>Alamat</label>
@@ -37,8 +32,11 @@
             <label>Password</label>
             <input type="password" name="member_password" placeholder="********" class="form-control">
           </div>  
+        <div>
+          <br>
+          <input type="submit" name="button_submit" value="Daftar" class="btn btn-success">
+        </div>
       </div>
-      <input type="submit" name="button_submit" value="Daftar" class="btn btn-success">
       
     </form> 
   </div>

@@ -29,7 +29,9 @@
 <?php
   //menampilkan data mysqli
     $modal=mysqli_query($link,"SELECT * FROM member WHERE member_id=1");
+    $ttl=mysqli_query($link,"SELECT CONCAT_WS(', ',member_ttl,(SELECT DATE_FORMAT(member_tglahir, '%d %M %Y')))AS ttl FROM member WHERE member_id=1");
     while($r=mysqli_fetch_array($modal)){
+   
 ?>
 	<div class="container-fluid">
 		<h3 class="page-header">
@@ -61,25 +63,29 @@
                 <div class="col-xs-7 col-sm-6">
                     <?php
                     if($r['member_jk']=='L'){
-                    echo  'Laki-Laki';
+                        echo  'Laki-Laki';
                     }else{
                         echo 'Perempuan';
                     }
                     ?>                            
                 </div>
             </div>
-
+            <?php
+             while($t=mysqli_fetch_array($ttl)){
+            ?>
             <div class="row">
                 <div class="col-xs-5 col-sm-6">
-                    Tanggal Lahir                            
+                    Tempat, Tanggal Lahir                            
                 </div>
                 <div class="col-xs-7 col-sm-6">
                     <?php
-                    echo  $r['member_ttl']; 
+                    echo  $t['ttl']; 
                     ?>                            
                 </div>
             </div>
-
+            <?php 
+            } 
+            ?>
             <div class="row">
                 <div class="col-xs-5 col-sm-6">
                     Alamat                            
@@ -87,17 +93,6 @@
                 <div class="col-xs-7 col-sm-6">
                        <?php
                     echo  $r['member_alamat']; 
-                    ?>                           
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-5 col-sm-6">
-                    Email                            
-                </div>
-                <div class="col-xs-7 col-sm-6">
-                    <?php
-                    echo  $r['member_email']; 
                     ?>                           
                 </div>
             </div>
@@ -117,19 +112,32 @@
                         </button>
                 	</div>
         </h3>
-<!--		
+
 		<div>
             <div class="row">
                 <div class="col-xs-5 col-sm-6">
                     User Name                          
                 </div>
                 <div class="col-xs-7 col-sm-6">
-                    DlRhyareim
-         		</div>
-        	</div>
+                    <?php
+                    echo $r['member_username'];
+                    ?>
+         		   </div>
+        	  </div>
+
+            <div class="row">
+                <div class="col-xs-5 col-sm-6">
+                    Email                            
+                </div>
+                <div class="col-xs-7 col-sm-6">
+                    <?php
+                    echo  $r['member_email']; 
+                    ?>                           
+                </div>
+            </div>
 
 		</div>
--->
+
 	</div>
 </div>
 </div>

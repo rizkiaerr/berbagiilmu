@@ -29,7 +29,6 @@
 ?>
   <tr>
       <td><?php echo $no; ?></td>
-      <!--<td><?php echo  $r['member_id']; ?></td>-->
       <td><?php echo  $r['member_nama']; ?></td>
       <td><?php echo  $r['member_jk']; ?></td>
       <td><?php echo  $r['member_ttl']; ?></td>

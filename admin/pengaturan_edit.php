@@ -25,14 +25,26 @@
                 <div class="form-group" style="padding-bottom: 20px;">
                   <label for="Jenis Kelamin">Jenis Kelamin</label>
                     <br>
-                    <input type="radio" name="member_jk" value="L" /> Laki-Laki
-                    <br>
-                    <input type="radio" name="member_jk" value="P" /> Perempuan
+                  <?php 
+                    if (($r['member_jk'])=='L') {
+                      echo "<input type='radio' name='member_jk' value='L' checked/>Laki-Laki <br>";
+                      echo "<input type='radio' name='member_jk' value='P'/> Perempuan";
+                    }else
+                    {
+                      echo "<input type='radio' name='member_jk' value='L'/> Laki-Laki <br>";
+                      echo "<input type='radio' name='member_jk' value='P' checked /> Perempuan";
+                    }
+                 ?>
+                </div>
+
+                <div class="form-group" style="padding-bottom: 20px;">
+                  <label for="Tempat Lahir">Tempat kelahiran</label>
+                    <input type="text" name="member_ttl"  class="form-control" value="<?php echo $r['member_ttl']; ?>"/>
                 </div>
 
                 <div class="form-group" style="padding-bottom: 20px;">
                   <label for="Tanggal Lahir">Tanggal Lahir</label>
-                    <input type="date" name="member_ttl"  class="form-control" value="<?php echo $r['member_ttl']; ?>"/>
+                    <input type="date" name="member_tglahir" class="form-control" value="<?php echo $r['member_tglahir']; ?>"/>
                 </div>
 
                 <div class="form-group" style="padding-bottom: 20px;">
@@ -41,13 +53,13 @@
                 </div>
 
                 <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Email">Email</label>
-                   <input type="text" name="member_email"  class="form-control" value="<?php echo $r['member_email']; ?>"/>
+                  <label for="username">Username</label>
+                   <input type="text" name="member_username" class="form-control" value="<?php echo $r['member_username']; ?>"/>
                 </div>
 
                 <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Password">Password</label>
-                   <input type="password" name="member_password"  class="form-control" value="<?php echo $r['member_password']; ?>"/>
+                  <label for="Email">Email</label>
+                   <input type="text" name="member_email"  class="form-control" value="<?php echo $r['member_email']; ?>"/>
                 </div>
 
 	            <div class="modal-footer">

@@ -81,7 +81,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-times fa-fw"></i>
-                    Guest
+                    Hello, Guest
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -108,6 +108,28 @@
     </nav>
     <!--/navbar-->
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  <!-- BEGIN # MODAL LOGIN -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
