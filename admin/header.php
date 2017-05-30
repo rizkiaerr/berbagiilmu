@@ -77,6 +77,10 @@
 						<input type="text" placeholder="Search" class="form-control">
 					</div>
 				</form>
+                <?php
+                if (empty($_SESSION['member_email']))
+                {
+                ?>
                 <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -100,6 +104,41 @@
                     </ul>
                 </li>
                 </ul>
+                <?php
+                }
+                    else
+                {
+                $member_email = $_SESSION['member_email'];
+                $query_validasi = mysqli_query($link,"SELECT * FROM member WHERE member_email = '$member_email'");
+                $ambil = mysqli_fetch_assoc($query_validasi);
+                extract($ambil);
+                ?>
+                <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-times fa-fw"></i>
+                    <?php echo ucwords($member_nama); ?>
+                    <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li>
+                        <a href="edit.php">
+                        <i class="fa fa-look fa-fw"></i>
+                        View
+                        </a>
+                    </li>
+                    <li>
+                        <a href="logout.php">
+                        <i class="fa fa-sign-out fa-fw"></i>
+                        Logout
+                        </a>
+                    </li>
+                    </ul>
+                </li>
+                </ul>
+                <?php
+                };
+                ?>
             </div>
             <!-- /.navbar-collapse -->
         </div>

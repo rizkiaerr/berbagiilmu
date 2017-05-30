@@ -20,22 +20,24 @@
             }
         }
         ?>
-        <div class="panel panel-default"" >
+        <div class="panel panel-default" >
             <form action="login_act.php" method="post">
                 <div class="col-md-5 col-md-offset-2 kotak">
                     <h2>Login ..</h2>
                     <br>
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
-                        <input type="text" class="form-control" placeholder="Masukkan Email Anda" name="member_email" aria-describedby="sizing-addon2">
+                        <input type="text" class="form-control" placeholder="Masukkan Email Anda" name="member_email" aria-describedby="sizing-addon2" required>
                     </div>
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-lock"></span></span>
-                        <input type="password" class="form-control" placeholder="Masukkan Password Anda" name="member_password" aria-describedby="sizing-addon2">
+                        <input type="password" class="form-control" placeholder="Masukkan Password Anda" name="member_password" aria-describedby="sizing-addon2" required>
                     </div>
                     <div class="input-group input-group-lg">
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>
+                    <hr>
+                    <h5><a href="lost-password.php"> Lupa Password...?</a></h5>
                 </div>
             </form>
         </div>
