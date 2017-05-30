@@ -23,6 +23,7 @@ v7
 - penambahan fitur 'logout'
 - penambahan fitur 'sign up' tanpa adanya opsi 'sign in'
 
+vx.x.x.x.x
 ------------------------------------------------------------
 --------------
 @aris:
