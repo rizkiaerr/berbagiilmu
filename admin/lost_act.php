@@ -49,7 +49,7 @@ ob_start();
 		Kami telah mengatur ulang password Anda, Berikut Data beserta password baru Anda :<br><br>
 		<table>
 		<tr>
-			<td><b>Angga</b><td>: ".$member_nama."</td></td>
+			<td><b>Nama</b><td>: ".$member_nama."</td></td>
 		</tr>
 		<tr>
 			<td><b>Email</b><td>: <b>".$member_email."</b></td></td>
@@ -62,7 +62,7 @@ ob_start();
 		<br>
 		<center>
 			<p> Atau klik di bawah ini untuk mendapatkan password baru sesuai keinginan Anda</p>
-			<b><i><a href=\"localhost/ilmu/admin/password_baru.php?email=".$member_email."\">PASSWORD BARU!!!</a></i></b>
+			<b><i><a href=\"localhost/berbagiilmu/admin/password_baru.php?email=".$member_email."\">PASSWORD BARU!!!</a></i></b>
 		</center>
 			<p><br><br>
 	    Developer Berbagi Ilmu<br>
