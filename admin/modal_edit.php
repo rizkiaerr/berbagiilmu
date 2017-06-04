@@ -16,13 +16,13 @@
         <div class="modal-body">
         	<form action="proses_edit.php" name="modal_popup" enctype="multipart/form-data" method="POST">
         		
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Nama Member">Nama Member</label>
                     <input type="hidden" name="member_id"  class="form-control" value="<?php echo $r['member_id']; ?>" />
                     <input type="text" name="member_nama"  class="form-control" value="<?php echo $r['member_nama']; ?>"/>
                 </div>
 
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Jenis Kelamin">Jenis Kelamin</label>
                     <br>
                   <?php
@@ -37,29 +37,32 @@
                  ?>
                 </div>
 
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Tempat Lahir">Tempat Lahir</label>
                     <input type="text" name="member_ttl"  class="form-control" value="<?php echo $r['member_ttl']; ?>"/>
                 </div>
-
-               <div class="form-group" style="padding-bottom: 20px;">
+               <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Alamat">Tanggal Lahir</label>
                     <input type="date" name="member_tglahir" class="form-control" value="<?php echo $r['member_tglahir']; ?>"/>
                 </div>
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Alamat">Alamat</label>
                     <textarea name="member_alamat"  class="form-control"><?php echo $r['member_alamat']; ?></textarea>
                 </div>
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="No Telephone/Handphone">No Telephone/Handphone</label>
                    <input type="text" name="member_tlp"  class="form-control" value="<?php echo $r['member_tlp']; ?>"/>
                 </div>
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
+                  <label for="Username">Username</label>
+                  <input type="text" name="member_username"  class="form-control" value="<?php echo $r['member_username']; ?>"/>
+                </div>
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Email">Email</label>
                    <input type="text" name="member_email"  class="form-control" value="<?php echo $r['member_email']; ?>"/>
                 </div>
 
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Password">Password</label>
                    <input type="password" name="member_password"  class="form-control" value="<?php echo $r['member_password']; ?>"/>
                 </div>

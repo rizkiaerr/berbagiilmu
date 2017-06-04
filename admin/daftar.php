@@ -57,7 +57,7 @@
           
           <div>
             <br>
-            <input type="submit" name="submit_daftar" value="Daftar" class="btn btn-success">
+            <input type="submit" name="submit_daftar" class="btn btn-success">
           </div>
       </form>
     </div>

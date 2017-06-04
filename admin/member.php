@@ -68,14 +68,14 @@
         <div class="modal-body">
 
           <form action="proses_save.php" name="modal_popup" enctype="multipart/form-data" method="POST">           
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Nama Member">Nama Member</label>
                     
                     <input type="text" name="member_nama" class="form-control" placeholder="Nama Member" required/>
                     <input type="hidden" name="member_id" type="text" class="form-control" value="<?php echo $data_last+1; ?>"/>
                 </div>
 
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Jenis Kelamin">Jenis Kelamin</label>
                     <br>
                     <input type="radio" name="member_jk" value="L" checked="checked"/> Laki-Laki
@@ -83,26 +83,37 @@
                 </div>
 
 
-                <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Tanggal Lahir">Tanggal Lahir</label>
-                    <input type="date" name="member_ttl"  class="form-control" placeholder="Tanggal Lahir" required/>
+                <div class="form-group" style="padding-bottom: 1px;">
+                  <label for="Tanggal Lahir">Tempat Lahir</label>
+                    <input type="text" name="member_ttl"  class="form-control" placeholder="Tempat Lahir" required/>
                 </div>
 
-                <div class="form-group" style="padding-bottom: 20px;">
+               <div class="form-group" style="padding-bottom: 1px;">
+                  <label for="Alamat">Tanggal Lahir</label>
+                    <input type="date" name="member_tglahir" class="form-control" placeholder="mm/dd/yyyy" required />
+                </div>
+
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Alamat">Alamat</label>
                     <input type="text" name="member_alamat"  class="form-control" placeholder="Alamat" required/>
                 </div>
 
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="No Telephone/Handphone">No Telephone/Handphone</label>
                    <input type="text" name="member_tlp"  class="form-control" maxlength="13" placeholder="08xxxxxxxxxx" required/>
                 </div>
-                <div class="form-group" style="padding-bottom: 20px;">
+                
+                <div class="form-group" style="padding-bottom: 1px;">
+                  <label for="Username">Username</label>
+                  <input type="text" name="member_username" class="form-control" placeholder="username" required/>
+                </div>
+
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Email">Email</label>
                    <input type="email" name="member_email"  class="form-control" placeholder="e.g samsudin@domain.com" required/>
                 </div>
 
-                <div class="form-group" style="padding-bottom: 20px;">
+                <div class="form-group" style="padding-bottom: 1px;">
                   <label for="Password">Password</label>
                    <input type="password" name="member_password"  class="form-control" required/>
                 </div>

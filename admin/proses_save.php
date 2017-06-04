@@ -11,9 +11,9 @@ include "config.php";
 	$member_email 	 = $_POST['member_email'];
 	$member_password = md5($_POST['member_password']);
 
-mysqli_query($link,"INSERT INTO member(member_id,member_nama,member_jk,member_ttl,member_tglahir,member_alamat,member_username,member_tlp,member_email,member_password) VALUES 
+
+
+mysqli_query($link,"INSERT INTO member(member_id, member_nama, member_jk, member_ttl, member_tglahir, member_alamat, member_username, member_tlp, member_email, member_password) VALUES
 	('$member_id','$member_nama','$member_jk','$member_ttl','$member_tglahir','$member_alamat','$member_username','$member_email','$member_password')");
-if($_POST['submit_daftar']){
-	header('location:index.php');
-  }else  	header('location:member.php');
+header('location:member.php');
 ?>
