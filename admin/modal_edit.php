@@ -25,21 +25,35 @@
                 <div class="form-group" style="padding-bottom: 20px;">
                   <label for="Jenis Kelamin">Jenis Kelamin</label>
                     <br>
-                    <input type="radio" name="member_jk" value="L" /> Laki-Laki
-                    <br>
-                    <input type="radio" name="member_jk" value="P" /> Perempuan
+                  <?php
+                    if (($r['member_jk'])=='L') {
+                      echo "<input type='radio' name='member_jk' value='L' checked/>Laki-Laki";
+                      echo "<input type='radio' name='member_jk' value='P'/> Perempuan";
+                    }else
+                    {
+                      echo "<input type='radio' name='member_jk' value='L'/> Laki-Laki";
+                      echo "<input type='radio' name='member_jk' value='P' checked /> Perempuan";
+                    }
+                 ?>
                 </div>
 
                 <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Tanggal Lahir">Tanggal Lahir</label>
-                    <input type="date" name="member_ttl"  class="form-control" value="<?php echo $r['member_ttl']; ?>"/>
+                  <label for="Tempat Lahir">Tempat Lahir</label>
+                    <input type="text" name="member_ttl"  class="form-control" value="<?php echo $r['member_ttl']; ?>"/>
                 </div>
 
+               <div class="form-group" style="padding-bottom: 20px;">
+                  <label for="Alamat">Tanggal Lahir</label>
+                    <input type="date" name="member_tglahir" class="form-control" value="<?php echo $r['member_tglahir']; ?>"/>
+                </div>
                 <div class="form-group" style="padding-bottom: 20px;">
                   <label for="Alamat">Alamat</label>
                     <textarea name="member_alamat"  class="form-control"><?php echo $r['member_alamat']; ?></textarea>
                 </div>
-
+                <div class="form-group" style="padding-bottom: 20px;">
+                  <label for="No Telephone/Handphone">No Telephone/Handphone</label>
+                   <input type="text" name="member_tlp"  class="form-control" value="<?php echo $r['member_tlp']; ?>"/>
+                </div>
                 <div class="form-group" style="padding-bottom: 20px;">
                   <label for="Email">Email</label>
                    <input type="text" name="member_email"  class="form-control" value="<?php echo $r['member_email']; ?>"/>
