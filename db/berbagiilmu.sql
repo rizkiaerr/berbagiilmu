@@ -1,79 +1,179 @@
-/*
-SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.6.20 : Database - berbagiilmu
-*********************************************************************
-*/
+-- phpMyAdmin SQL Dump
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 04, 2017 at 04:13 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
-/*!40101 SET NAMES utf8 */;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-/*!40101 SET SQL_MODE=''*/;
 
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`berbagiilmu` /*!40100 DEFAULT CHARACTER SET latin1 */;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-USE `berbagiilmu`;
+--
+-- Database: `berbagiilmu`
+--
 
-/*Table structure for table `adm` */
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `adm`;
+--
+-- Table structure for table `admin`
+--
 
-CREATE TABLE `adm` (
-  `id` char(10) NOT NULL,
-  `nama` char(15) DEFAULT NULL,
-  `pass` char(20) DEFAULT NULL,
-  `email` char(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `admin` (
+  `admin_id` smallint(3) NOT NULL,
+  `admin_nama` varchar(20) DEFAULT NULL,
+  `admin_jk` varchar(1) DEFAULT NULL,
+  `admin_ttl` varchar(20) DEFAULT NULL,
+  `admin_tglahir` date DEFAULT NULL,
+  `admin_alamat` varchar(50) DEFAULT NULL,
+  `admin_tlp` decimal(13,0) DEFAULT NULL,
+  `admin_username` varchar(20) DEFAULT NULL,
+  `admin_email` varchar(40) DEFAULT NULL,
+  `admin_password` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*Data for the table `adm` */
+-- --------------------------------------------------------
 
-insert  into `adm`(`id`,`nama`,`pass`,`email`) values ('1','admin1','admin','-'),('2','admin2','admin','-');
-
-/*Table structure for table `buku` */
-
-DROP TABLE IF EXISTS `buku`;
+--
+-- Table structure for table `buku`
+--
 
 CREATE TABLE `buku` (
-  `id` char(12) DEFAULT NULL,
-  `nama_buku` char(30) DEFAULT NULL,
-  `kategori` char(15) DEFAULT NULL,
-  `deskripsi` char(50) DEFAULT NULL,
-  `author` char(40) DEFAULT NULL,
-  `uploader` char(40) DEFAULT NULL
+  `buku_id` smallint(3) NOT NULL,
+  `buku_judul` varchar(30) DEFAULT NULL,
+  `buku_penulis` varchar(30) DEFAULT NULL,
+  `buku_author` smallint(3) DEFAULT NULL,
+  `buku_kategori` varchar(10) DEFAULT NULL,
+  `buku_bahasa` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*Data for the table `buku` */
+-- --------------------------------------------------------
 
-/*Table structure for table `kategori_buku` */
+--
+-- Table structure for table `kategori`
+--
 
-DROP TABLE IF EXISTS `kategori_buku`;
-
-CREATE TABLE `kategori_buku` (
-  `idkat` char(5) DEFAULT NULL,
-  `kategori` char(15) DEFAULT NULL
+CREATE TABLE `kategori` (
+  `kategori_id` varchar(10) NOT NULL,
+  `kategori_jenis` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*Data for the table `kategori_buku` */
+--
+-- Dumping data for table `kategori`
+--
 
-/*Table structure for table `member` */
+INSERT INTO `kategori` (`kategori_id`, `kategori_jenis`) VALUES
+('01', 'Agama'),
+('02', 'Bahasa dan Kamus'),
+('03', 'Biografi'),
+('04', 'Buku Sekolah'),
+('05', 'Buku Teks'),
+('06', 'Ekonomi dan Manajemen'),
+('07', 'Hobi dan Usaha'),
+('08', 'Hukum dan Undang-Undang'),
+('09', 'Inspirasi dan Spiritual'),
+('10', 'Kesehatan dan Lingkungan'),
+('11', 'Komputer dan Internet'),
+('12', 'Masakan dan Makanan'),
+('13', 'Perhotelan dan Pariwisata'),
+('14', 'Prikologi dan Pengembangan Dir'),
+('15', 'Remaja'),
+('16', 'Sains dan Teknologi'),
+('17', 'Sastra dan Filsafat'),
+('18', 'Sejarah dan Budaya'),
+('19', 'Animasi dan Desain'),
+('20', 'Pemrograman'),
+('21', 'Security'),
+('22', 'Sistem Operasi'),
+('23', 'Software'),
+('24', 'Hardware'),
+('25', 'Tools & Utility'),
+('26', 'Web Design'),
+('27', 'Web Programming'),
+('28', 'Lainnya');
 
-DROP TABLE IF EXISTS `member`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member`
+--
 
 CREATE TABLE `member` (
-  `id` char(12) DEFAULT NULL,
-  `nama` char(30) DEFAULT NULL,
-  `pass` char(30) DEFAULT NULL,
-  `email` char(40) DEFAULT NULL
+  `member_id` smallint(3) NOT NULL,
+  `member_nama` varchar(20) DEFAULT NULL,
+  `member_jk` varchar(1) DEFAULT NULL,
+  `member_ttl` varchar(20) DEFAULT NULL,
+  `member_tglahir` date DEFAULT NULL,
+  `member_alamat` varchar(50) DEFAULT NULL,
+  `member_tlp` varchar(15) DEFAULT NULL,
+  `member_username` varchar(20) DEFAULT NULL,
+  `member_email` varchar(40) DEFAULT NULL,
+  `member_password` varchar(35) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*Data for the table `member` */
+--
+-- Dumping data for table `member`
+--
 
-insert  into `member`(`id`,`nama`,`pass`,`email`) values ('1','member1','member','datagame12@gmail.com'),('2','member2','member','datagame13@gmail.com'),('3','guest','guest','-');
+INSERT INTO `member` (`member_id`, `member_nama`, `member_jk`, `member_ttl`, `member_tglahir`, `member_alamat`, `member_tlp`, `member_username`, `member_email`, `member_password`) VALUES
+(18, 'Moch. Rizkia Hidayat', 'L', 'Sumedang', '1996-04-23', 'Tanjungsari', '089661203309', 'rizkiaerr', 'rizkiaerr@gmail.com', '69ec49b2a3de2c33c27e79cd3bf3d741');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `buku`
+--
+ALTER TABLE `buku`
+  ADD PRIMARY KEY (`buku_id`),
+  ADD KEY `fk_kategori` (`buku_kategori`),
+  ADD KEY `fk_member` (`buku_author`);
+
+--
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`kategori_id`);
+
+--
+-- Indexes for table `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`member_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` smallint(3) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `buku`
+--
+ALTER TABLE `buku`
+  MODIFY `buku_id` smallint(3) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `member`
+--
+ALTER TABLE `member`
+  MODIFY `member_id` smallint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

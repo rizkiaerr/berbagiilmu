@@ -1,9 +1,10 @@
 <?php
+	$host	= "localhost";
 	$user = "root";
 	$password = "";
 	$database = "berbagiilmu";
 
-$link = mysqli_connect('localhost',$user,$password,$database);
+$link = mysqli_connect($host,$user,$password,$database);
 
 
 if (!$link) {

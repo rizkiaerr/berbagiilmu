@@ -1,0 +1,7 @@
+Tolong perhatikan
+Apabila ada file junk coba hapus biar enak dipandang
+Untuk db silahkan impor
+DB masih ada yang error oleh karena itu coba cek 
+
+	member.member_tlp varchar(15)
+	member.member_password ganti length jadi >30
