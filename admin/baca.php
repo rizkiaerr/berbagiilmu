@@ -33,7 +33,7 @@
 				Buku Terbaru 
 			</h2>
 			<?php
-				$link = koneksi_db();
+				//$link = koneksi_db();
 				$query = "select * from buku";
 				$res = mysqli_query($link, $query);
 			?>

@@ -54,3 +54,6 @@ v8
 - fitur cari
 -fitur baca buku
 ---		
+
+v9
+- FIXXXXX CUK

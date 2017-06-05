@@ -6,6 +6,9 @@
     session_start(); 
 //    include 'cek.php';
   include 'config.php';
+  include '../Cloudinary/Cloudinary.php';
+  include '../Cloudinary/Uploader.php';
+  include '../Cloudinary/Api.php';
 ?>
 
     <meta charset="utf-8">
@@ -29,6 +32,17 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../datatables/js/jquery.dataTables.js"></script>
+
+    <!-- Cloudinary -->
+     <?php
+         \Cloudinary::config(array( 
+             "cloud_name" => "dzupaysdl", 
+             "api_key" => "782957816277577", 
+             "api_secret" => "DpgQ8pMe2Q9upM6d0bYowtsvG4U" 
+         )); 
+     ?>
+     <!-- <link href="CLOUDINARY_URL=cloudinary://782957816277577:DpgQ8pMe2Q9upM6d0bYowtsvG4U@dzupaysdl" > -->
+
 
     <!-- Bootstrap Core JavaScript -->
     <script type="text/javascript">
@@ -181,7 +195,7 @@ overflow: hidden;
                                                                 <?php echo "$member_email" ?></p>
                                                             <div class="divider">
                                                             </div>
-                                                            <a href="#" class="btn btn-primary btn-sm active">View Profile</a>
+                                                            <a href="profil.php" class="btn btn-primary btn-sm active">View Profile</a>
                                                         </div>
                                                     </div>
                                                 </div>
