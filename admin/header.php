@@ -37,7 +37,52 @@
              interval: 5000 //changes the speed
         });
     </script>
+    <style type="text/css">
+        /* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin-top: 20px;
+}
 
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar-wrapper .navbar {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-content
+{
+    width:320px;
+    padding: 15px;
+    padding-bottom:0px;
+}
+.navbar-content:before, .navbar-content:after
+{
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.navbar-nav.navbar-right:last-child {
+margin-right: 15px !important;
+}
+.navbar-footer 
+{
+    background-color:#DDD;
+}
+.navbar-footer-content { padding:15px 15px 15px 15px; }
+.dropdown-menu {
+padding: 0px;
+overflow: hidden;
+}
+    </style>
 </head>
 
 <body>
@@ -117,23 +162,43 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-times fa-fw"></i>
-                    <?php echo ucwords($member_nama); ?>
+                    <?php echo ucwords($member_username); ?>
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                    <li>
-                        <a href="edit.php">
-                        <i class="fa fa-look fa-fw"></i>
-                        View
-                        </a>
-                    </li>
-                    <li>
-                        <a href="logout.php">
-                        <i class="fa fa-sign-out fa-fw"></i>
-                        Logout
-                        </a>
-                    </li>
-                    </ul>
+                                           <li>
+                                                <div class="navbar-content">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <img src="http://placehold.it/120x120"
+                                                                alt="Alternate Text" class="img-responsive" />
+                                                            <p class="text-center small">
+                                                                <a href="#">Change Photo</a></p>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <span><?php echo "$member_nama"?></span>
+                                                            <p class="text-muted small">
+                                                                <?php echo "$member_email" ?></p>
+                                                            <div class="divider">
+                                                            </div>
+                                                            <a href="#" class="btn btn-primary btn-sm active">View Profile</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="navbar-footer">
+                                                    <div class="navbar-footer-content">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <a href="password_baru.php" class="btn btn-default btn-sm">Change Passowrd</a>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <a href="logout.php" class="btn btn-default btn-sm pull-right">Sign Out</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                      </ul>
                 </li>
                 </ul>
                 <?php
@@ -147,6 +212,28 @@
     </nav>
     <!--/navbar-->
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  <!-- BEGIN # MODAL LOGIN -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
