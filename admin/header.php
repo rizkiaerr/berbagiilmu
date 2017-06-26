@@ -138,7 +138,7 @@ overflow: hidden;
 					</div>
 				</form>
                 <?php
-                if (empty($_SESSION['member_email']))
+                if((empty($_SESSION['member_email']))AND(empty($_SESSION['admin_email'])))
                 {
                 ?>
                 <ul class="nav navbar-nav navbar-right">
@@ -167,7 +167,9 @@ overflow: hidden;
                 <?php
                 }
                     else
-                {
+            
+            if(!empty($_SESSION['member_email']))
+             {
                 $member_email = $_SESSION['member_email'];
                 $query_validasi = mysqli_query($link,"SELECT * FROM member WHERE member_email = '$member_email'");
                 $ambil = mysqli_fetch_assoc($query_validasi);
@@ -217,7 +219,61 @@ overflow: hidden;
                 </li>
                 </ul>
                 <?php
-                };
+              }
+                    else
+              
+                if(!empty($_SESSION['admin_email'])){
+                $admin_email = $_SESSION['admin_email'];
+                $query_validasi = mysqli_query($link,"SELECT * FROM admin WHERE admin_email = '$admin_email'");
+                $ambil = mysqli_fetch_assoc($query_validasi);
+                extract($ambil);
+                ?>
+                <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-times fa-fw"></i>
+                    <?php echo ucwords($admin_username); ?>
+                    <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                                           <li>
+                                                <div class="navbar-content">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <img src="http://placehold.it/120x120"
+                                                                alt="Alternate Text" class="img-responsive" />
+                                                            <p class="text-center small">
+                                                                <a href="#">Change Photo</a></p>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <span><?php echo "$admin_nama"?></span>
+                                                            <p class="text-muted small">
+                                                                <?php echo "$admin_email" ?></p>
+                                                            <div class="divider">
+                                                            </div>
+                                                            <a href="profil.php" class="btn btn-primary btn-sm active">View Profile</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="navbar-footer">
+                                                    <div class="navbar-footer-content">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <a href="password_baru.php" class="btn btn-default btn-sm">Change Passowrd</a>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <a href="logout.php" class="btn btn-default btn-sm pull-right">Sign Out</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                      </ul>
+                </li>
+                </ul>
+                <?php
+                
+            };
                 ?>
             </div>
             <!-- /.navbar-collapse -->
