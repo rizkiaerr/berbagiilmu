@@ -1,7 +1,7 @@
 <?php
 include "header.php";
 //session_start();
-if(!isset($_SESSION['member_email'])){ //LOGIN
+if((empty($_SESSION['member_email']))AND(empty($_SESSION['admin_email']))){ //LOGIN
   ?><script>
     window.alert("Harap Login!");
     window.location.href="login.php";
@@ -129,20 +129,22 @@ if(!isset($_SESSION['member_email'])){ //LOGIN
 </head>
 <body>
 
-<?php 
-$member=$_SESSION['member_email'];
-$query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
+<?php
+if(!empty($_SESSION['admin_email']))
+{ 
+  $admin=$_SESSION['admin_email'];
+  $query=mysqli_query($link,"SELECT * FROM admin where admin_email='$admin'");
   if(!$query){
     die("Gagal : ".mysql_error());
   }
   if($row=mysqli_fetch_array($query)){
-      $nama=$row['member_nama'];
-      $tgl=$row['member_tglahir'];
-      $id=$row['member_username'];
-      $kontak=$row['member_email'];
-      $jk=$row["member_jk"];
-      $alamat=$row["member_alamat"];
-      $telp=$row["member_tlp"];
+      $nama=$row['admin_nama'];
+      $tgl=$row['admin_tglahir'];
+      $id=$row['admin_username'];
+      $kontak=$row['admin_email'];
+      $jk=$row["admin_jk"];
+      $alamat=$row["admin_alamat"];
+      $telp=$row["admin_tlp"];
       /*if($row['nama_foto']==""){
        $foto="img/pict_default.png";
       } )
@@ -151,11 +153,8 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
       }
       $count=mysqli_query($link,"SELECT * FROM post where id_user='$id'");
       $count=mysqli_num_rows($count); */
-     } 
-     ?> 
-
-
-
+  } 
+  ?>
 
 <div class="container-fluid">
 <div class="row" style="margin-top:30px">
@@ -203,6 +202,84 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
       </div>
     </div>
   </div>
+  <?php
+}else
+
+if(!empty($_SESSION['member_email']))
+{ 
+$member=$_SESSION['member_email'];
+$query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
+  if(!$query){
+    die("Gagal : ".mysql_error());
+  }
+  if($row=mysqli_fetch_array($query)){
+      $nama=$row['member_nama'];
+      $tgl=$row['member_tglahir'];
+      $id=$row['member_username'];
+      $kontak=$row['member_email'];
+      $jk=$row["member_jk"];
+      $alamat=$row["member_alamat"];
+      $telp=$row["member_tlp"];
+      /*if($row['nama_foto']==""){
+       $foto="img/pict_default.png";
+      } )
+      else{
+       $foto = "core/upload/".$row['id_user']."/".$row['nama_foto'];
+      }
+      $count=mysqli_query($link,"SELECT * FROM post where id_user='$id'");
+      $count=mysqli_num_rows($count); */
+     } 
+     ?>
+
+<div class="container-fluid">
+<div class="row" style="margin-top:30px">
+  <div class="col-sm-3" style="margin-left:10px;">
+
+    <div class="col-sm-12" style="border:0px;">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="background-color:black; border-color:black"></div>
+        <div class="panel-body"><img src="../image/default/profile.png" class="img-responsive" style="width:100%" alt="Image"></div>
+      </div>
+    </div>
+
+    <div class="col-sm-12" style="border:0px;">
+      <div class="panel panel-primary">
+       <div class="panel-heading" style="background-color:black; border-color:black"></div>
+       <div class="panel-body">
+         <table class="col-sm-12">
+          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Nama </th>
+            <tr class="col-sm-12">
+              <td style="float:right;"><?php echo $nama;?></td>
+            </tr>
+          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Tanggal Lahir </th>
+            <tr class="col-sm-12">
+              <td style="float:right;"><?php echo $tgl;?></td>
+            </tr>
+          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Jenis Kelamin </th>
+            <tr class="col-sm-12">
+              <td style="float:right;"><?php echo $jk;?></td>
+            </tr>
+          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Alamat </th>
+            <tr class="col-sm-12">
+              <td style="float:right;"><?php echo $alamat;?></td>
+            </tr>
+          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">No Telp </th>
+            <tr class="col-sm-12">
+              <td style="float:right;"><?php echo $telp;?></td>
+            </tr>
+          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Jumlah Post </th>
+            <tr class="col-sm-12">
+              <td style="float:right;"><?php echo ""?></td>
+            </tr>
+
+         </table>
+       </div>
+      </div>
+    </div>
+  </div>
+  <?php
+  }
+  ?>
   <div class="col-sm-8">
   <a href="post.php">
   <input type="submit" name="signup" class="btn btn-danger btn-md" value="Buat Post Baru !" style="margin-top:10px;margin-bottom:15px;width:100%;">

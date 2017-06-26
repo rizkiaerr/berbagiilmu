@@ -11,7 +11,6 @@ $admin=mysqli_query($link,"SELECT * FROM admin WHERE admin_email='$email' AND ad
 
 if(mysqli_num_rows($admin)==1){
 	$_SESSION['admin_email']=$email;
-	
 	header("location:index.php");
 }
 

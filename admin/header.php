@@ -4,7 +4,6 @@
 <head>
 <?php 
     session_start(); 
-//    include 'cek.php';
   include 'config.php';
   include '../Cloudinary/Cloudinary.php';
   include '../Cloudinary/Uploader.php';
@@ -218,11 +217,12 @@ overflow: hidden;
                       </ul>
                 </li>
                 </ul>
-                <?php
+              <?php
               }
                     else
               
-                if(!empty($_SESSION['admin_email'])){
+              if(!empty($_SESSION['admin_email']))
+              {
                 $admin_email = $_SESSION['admin_email'];
                 $query_validasi = mysqli_query($link,"SELECT * FROM admin WHERE admin_email = '$admin_email'");
                 $ambil = mysqli_fetch_assoc($query_validasi);
@@ -259,7 +259,7 @@ overflow: hidden;
                                                     <div class="navbar-footer-content">
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <a href="password_baru.php" class="btn btn-default btn-sm">Change Passowrd</a>
+                                                                
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <a href="logout.php" class="btn btn-default btn-sm pull-right">Sign Out</a>
@@ -272,8 +272,7 @@ overflow: hidden;
                 </li>
                 </ul>
                 <?php
-                
-            };
+              };
                 ?>
             </div>
             <!-- /.navbar-collapse -->
