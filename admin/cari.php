@@ -1,6 +1,11 @@
 <?php
 	include 'header.php';
 	//include 'koneksi.php';
+
+	if(empty($_POST['txt_cari'])){
+      $isi_cari = $_GET['txt_cari'];
+    }      
+    else $isi_cari = $_POST['txt_cari']; 
 ?>
 
 <!-- Ambil Data -->
@@ -9,12 +14,17 @@
     <!-- Page Content -->
     <div class="container">
 		<br>
-		<h4> Hasil Pencarian </h4>
+		<h4> Hasil Pencarian <?php echo $isi_cari; ?></h4>
 		<hr>
 		<div class="col-sm-12">
 			<?php
 				//$link = koneksi_db();
-				$query = "select * from buku";
+				if(empty($_POST['txt_cari'])){
+			    	$query = "select * from buku where buku_kategori = (select kategori_id from kategori where kategori_jenis='".$isi_cari."')";
+			    } else {
+			    	$query = "select * from buku where buku_judul LIKE '%".$isi_cari."%' or buku_penulis LIKE '%".$isi_cari."%'";
+			    }
+				
 				$res = mysqli_query($link, $query);
 			?>
 			<?php
@@ -37,35 +47,6 @@
 			<?php
 				}
 			?>
-		</div>
-	</div>
-		
-	<div class="container">
-		<?php
-			$link = koneksi_db();
-			$query = "select * from kategori";
-			$res = mysqli_query($link, $query);
-		?>
-		<br>
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<p> Lainnya </p>
-			</div>
-			<div class="panel-body">
-			<?php
-				$no=0;
-				while($data=mysqli_fetch_array($res))
-				{
-					$no++;
-			?>	
-					
-						<li><a href="#"><?php echo"$data[kategori_jenis]"; ?></a>
-					
-			<?php
-					
-				}
-			?>
-			</div>
 		</div>
 	</div>
 	

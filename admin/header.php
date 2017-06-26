@@ -122,18 +122,19 @@ overflow: hidden;
 					<li class="dropdown">
 						<a data-toggle="dropdown" class="dropdown-toggle" href="#">Buku <b class="caret"></b></a>
 						<ul role="menu" class="dropdown-menu">
-							<li><a href="#">Teknologi</a></li>
-							<li><a href="#">Sosial</a></li>
-							<li><a href="#">Olahraga</a></li>
+							<li><a href="cari.php?txt_cari=Agama">Agama</a></li>
+							<li><a href="cari.php?txt_cari=Animasi dan Desain">Animasi dan Desain</a></li>
+							<li><a href="cari.php?txt_cari=Bahasa dan Kamus">Bahasa dan Kamus</a></li>
 							<!-- <li class="divider"></li> -->
-							<li><a href="#">Sejarah</a></li>
-							<li><a href="#">Lain-Lain</a></li>
+							<li><a href="cari.php?txt_cari=Biografi">Biografi</a></li>
+							<li><a href="cari.php?txt_cari=Buku Sekolah">Buku Sekolah</a></li>
+                            <li><a href="#">Lainnya</a></li>
 						</ul>
 					</li>
 				</ul>
-				<form role="search" class="navbar-form navbar-left">
+				<form role="search" class="navbar-form navbar-left" method="post" action="cari.php">
 					<div class="form-group">
-						<input type="text" placeholder="Search" class="form-control">
+						<input type="text" placeholder="Search" class="form-control" name="txt_cari">
 					</div>
 				</form>
                 <?php
