@@ -2,8 +2,8 @@
 session_start();
 include 'config.php';
 $email	=$_POST['email'];
-$password=$_POST['password'];
-//$password=md5($_POST['password']);
+//$password=$_POST['password'];
+$password=md5($_POST['password']);
 
 $member=mysqli_query($link,"SELECT * FROM member WHERE member_email='$email' AND member_password ='$password'");
 $admin=mysqli_query($link,"SELECT * FROM admin WHERE admin_email='$email' AND admin_password ='$password'");

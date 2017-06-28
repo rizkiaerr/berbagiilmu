@@ -5,3 +5,4 @@ DB masih ada yang error oleh karena itu coba cek
 
 	member.member_tlp varchar(15)
 	member.member_password ganti length jadi >30
+	admin.admin_password ganti length jadi >30

@@ -2,18 +2,6 @@
 <?php include "header.php"; ?>
 
 <?php
-  if (empty($_SESSION['admin_email']))
-  {
-  echo '<center><h1>404</h1>';
-  }elseif($_SESSION['admin_email'])
-  {
-     $admin_email = $_SESSION['admin_email'];
-     $query_validasi = mysqli_query($link,"SELECT * FROM admin WHERE admin_email = '$admin_email'");
-     $ambil = mysqli_fetch_assoc($query_validasi);
-     extract($ambil);
-?>
-
-<?php
         $auth = isset($_GET['auth']) ? ($_GET['auth']): '';
         $out = '';
         switch ($auth) {
@@ -34,18 +22,28 @@
                   </p>
                   </center>
                 ';
-              break;
         }
 ?>  
+
+
+<?php
+  if (!empty($_SESSION['admin_email']))
+  {
+     $admin_email = $_SESSION['admin_email'];
+     $_SESSION['admin_email'] = $admin_email;
+     $query_validasi = mysqli_query($link,"SELECT * FROM admin WHERE admin_email = '$admin_email'");
+     $ambil = mysqli_fetch_assoc($query_validasi);
+     extract($ambil);
+?>
 
 <div class="container">
     <h1 class="well">Upload Buku</h1>
   <div class="col-lg-12 well">
   <div class="row">
-    <form action="upload_admin_act.php" method="POST" enctype="multipart/form-data">
+    <form action="http://localhost/berbagiilmu/upload_act.php" method="POST" enctype="multipart/form-data">
       <?php echo $out; ?>
       <div class="col-sm-12">
-             <input type="text" name="buku_author" value="1" readonly="readonly"> 
+             <input type="hidden" name="buku_author" value="<?php echo "$admin_id"?>" readonly="readonly"> 
               <div class="form-group">
                 <label>Judul Buku</label>
                 <input type="text" name="buku_judul" placeholder="Masukan judul buku..." class="form-control" required>
@@ -94,5 +92,40 @@
   </div>
   </div>
 </div>
-<?php } ?>
-<?php include "footer.php";?>
+<?php 
+}elseif($_SESSION['member_email']) {
+
+	 $member_email = $_SESSION['member_email'];
+	 $_SESSION['member_email'] = $member_email;
+     $query_validasi = mysqli_query($link,"SELECT * FROM member WHERE member_email = '$member_email'");
+     $ambil = mysqli_fetch_assoc($query_validasi);
+     extract($ambil);
+?>
+
+<div class="container">
+    <h1 class="well">Upload Buku</h1>
+  <div class="col-lg-12 well">
+  <div class="row">
+    <form action="http://localhost/berbagiilmu/upload_act.php" method="POST" enctype="multipart/form-data">
+      <?php echo $out; ?>
+      <div class="col-sm-12">
+             <input type="hidden" name="buku_author" value="<?php echo "$member_id"?>"> 
+             <input type="hidden" name="buku_kategori" value="28" > 
+               <div class="form-group">
+                <label>File</label>
+                  <input type="file" name="buku_file" class="form-control" required>
+              </div>  
+
+        <div>
+          <br>
+          <input type="submit" name="button_submit" value="Upload" class="btn btn-success">
+          <input type="reset" value="Batal" class="btn btn-danger">
+        </div>
+      </div>
+      
+    </form> 
+  </div>
+  </div>
+</div>
+
+<?php }; include "footer.php";?>
