@@ -175,6 +175,7 @@ overflow: hidden;
                 extract($ambil);
                 ?>
                 <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Upload</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-times fa-fw"></i>
@@ -229,6 +230,7 @@ overflow: hidden;
                 extract($ambil);
                 ?>
                 <ul class="nav navbar-nav navbar-right">
+                <li><a href="upload_admin.php">Upload</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-times fa-fw"></i>

@@ -36,11 +36,11 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<p align="center">
-								<a href="#"><?php echo cl_image_tag("$data_buku[buku_id].jpg", array("width" => 140, "height" => 180, "crop" => "fill", "page" => 1)); ?></a>
+								<a href="baca.php?kategori=<?php echo"$data_buku[buku_kategori]" ?>&judul=<?php echo"$data_buku[buku_judul]" ?>"><?php echo cl_image_tag("$data_buku[buku_id].jpg", array("width" => 140, "height" => 180, "crop" => "fill", "page" => 1)); ?></a>
 							</p>
 						</div>
 						<div class="panel-footer">
-							<a href="#" align="center"><b><?php echo"$data_buku[buku_judul]"; ?></b></a>
+							<a href="baca.php?kategori=<?php echo"$data_buku[buku_kategori]" ?>&judul=<?php echo"$data_buku[buku_judul]" ?>" align="center"><b><?php echo"$data_buku[buku_judul]"; ?></b></a>
 						</div>
 					</div>
 				</div>

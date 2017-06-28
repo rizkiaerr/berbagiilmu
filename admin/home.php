@@ -1,5 +1,4 @@
 <div class="row">
-    
 	<div class="container-fluid">
 		<h1 class="page-header">
             Buku Terbaru
@@ -12,44 +11,52 @@
 						<div class="row">
 							<div class="col-sm-2"></a></div>
 							<?php
-								//$query = "SELECT * FROM kategori ORDER BY kategori_jenis ASC;";
-								//$res = mysqli_query($link, $query);
+								$query = "SELECT * FROM buku ORDER BY tanggal_upload DESC";
+								$res = mysqli_query($link, $query);
+
+								$no=0;
+								while($data=mysqli_fetch_array($res))
+								{
+									$no++;
 							?>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"></a></div>									
-						</div>
-						<!--/row-->
-					</div>
-					<!--/item-->
-					
-					<div class="item">
-						<div class="row">
-							<div class="col-sm-2"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"></a></div>	
-						</div>
-						<!--/row-->
-					</div>
-					<!--/item-->
-								
-					<div class="item">
-						<div class="row">
-							<div class="col-sm-2"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/2.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"><a href="baca.php" class="thumbnail"><img src="../image/book_slider_1/1.jpg" alt="Image" class="img-responsive"></a></div>
-							<div class="col-sm-2"></a></div>	
-						</div>
-						<!--/row-->
-					</div>
-					<!--/item-->
+									<div class="col-sm-2"><a href="baca.php?kategori=<?php echo"$data[buku_kategori]" ?>&judul=<?php echo"$data[buku_judul]" ?>" class="thumbnail"><?php echo cl_image_tag("$data[buku_id].jpg", array("width" => 200, "height" => 250, "crop" => "fill", "page" => 1)); ?></a></div>
+									<?php
+										if($no % 4 == 0){
+									?>
+
+										<div class="col-sm-2"></a></div>
+										</div>
+										</div>
+										<div class="item">
+											<div class="row">
+												<div class="col-sm-2"></a></div>
+												<?php
+													while($data=mysqli_fetch_array($res)){
+														$no++;
+												?>
+														<div class="col-sm-2"><a href="baca.php?kategori=<?php echo"$data[buku_kategori]" ?>&judul=<?php echo"$data[buku_judul]" ?>" class="thumbnail"><?php echo cl_image_tag("$data[buku_id].jpg", array("width" => 200, "height" => 250, "crop" => "fill", "page" => 1)); ?></a></div>
+														<?php
+															if($no % 4 == 0){
+														?>
+
+														<?php
+																break;
+															}
+														?>
+												<?php
+													}
+												?>	
+											<div class="col-sm-2"></a></div>							
+											</div>
+										</div>
+
+									<?php
+											break;
+										}
+									?>
+							<?php
+								}
+							?>								
 				</div>
 				
 				<!--/carousel-inner--> 
@@ -67,6 +74,7 @@
 		<!--/well-->
 	</div>
 	<br><br>
+
 	<div class="container-fluid">
 		<h1 class="page-header">
             Teknologi Itu Indah

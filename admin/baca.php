@@ -1,15 +1,20 @@
 <?php
 	include 'header.php';
 	//include 'koneksi.php';
+
+	$kategori=$_GET['kategori'];
+	$judul=$_GET['judul'];
+	$judul=urldecode($judul);
+	$alamat="../buku/".$kategori."/".$judul.".pdf";
 ?>
 
     <!-- Page Content -->
     <div class="container">
 		<div class="col-sm-9">
 			<h2 class="page-header">
-				Baca Buku
+				<?php  echo "$judul";?>
 			</h2>
-			<embed width="827" height="800" src="../buku/01/Intro(Pertemuan1).pdf" type="application/pdf"></embed>
+			<embed width="827" height="800" src="<?php  echo "$alamat"?>" type="application/pdf"></embed>
 			<br>
 			<br>
 			<hr>
