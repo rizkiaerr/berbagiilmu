@@ -45,21 +45,42 @@ DROP TABLE IF EXISTS `buku`;
 CREATE TABLE `buku` (
   `buku_id` smallint(3) NOT NULL AUTO_INCREMENT,
   `buku_judul` varchar(50) DEFAULT NULL,
+  `buku_author` smallint(3) DEFAULT NULL,
+  `buku_kategori` varchar(10) DEFAULT NULL,
+  `tanggal_upload` date DEFAULT NULL,
+  PRIMARY KEY (`buku_id`),
+  KEY `fk_member` (`buku_author`),
+  KEY `fk_kategori_member` (`buku_kategori`),
+  CONSTRAINT `fk_kategori_member` FOREIGN KEY (`buku_kategori`) REFERENCES `kategori` (`kategori_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_member` FOREIGN KEY (`buku_author`) REFERENCES `member` (`member_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+/*Data for the table `buku` */
+
+insert  into `buku`(`buku_id`,`buku_judul`,`buku_author`,`buku_kategori`,`tanggal_upload`) values (1,'Belajar Mengiklaskan',10,'29','2017-01-01'),(2,'Kamus Besar Bahasa Indonesia',10,'29','2017-01-02'),(3,'Letak Segitiga Muda',3,'29','2017-01-03'),(4,'Lembar Kerja Siswa',4,'29','2017-01-04'),(5,'Buku Teks',4,'29','2017-01-05'),(6,'Perekenomian Indonesia 2017',3,'29','2017-01-06'),(7,'Kue Is Live',5,'29','2017-01-07'),(8,'Undang Udang Indonesia',2,'29','2017-01-08'),(9,'Ki Joko Bodo',3,'29','2017-01-09'),(10,'Mengenal Penyakit Kulit',2,'29','2017-01-10'),(11,'Bahasa C#',10,'29','2017-01-11'),(12,'Masakan Padang',4,'29','2017-01-12'),(13,'Mengelola Hotel Di Indonesia',5,'29','2017-01-13'),(14,'Mengenal Diri Sendiri',2,'29','2017-01-14'),(15,'Tabloid Remaja',3,'29','2017-01-15'),(16,'Komputer Generasi Ke 5',2,'29','2017-01-16'),(17,'Sastra Indonesia',10,'29','2017-01-17'),(18,'Sejarah Indonesia',3,'29','2017-01-18'),(19,'Belajar Photoshop',4,'29','2017-01-19'),(20,'Belajar Java',5,'29','2017-01-20'),(21,'Pengemanan Website',4,'29','2017-01-21'),(22,'Mengenal Linux',5,'29','2017-01-22'),(23,'Kumpulan Software Terbaik 2017',3,'29','2017-01-23'),(24,'Komputer',10,'29','2017-01-24'),(25,'Mengenal PHP',3,'29','2017-01-25');
+
+/*Table structure for table `buku_admin` */
+
+DROP TABLE IF EXISTS `buku_admin`;
+
+CREATE TABLE `buku_admin` (
+  `buku_id` varchar(5) NOT NULL,
+  `buku_judul` varchar(50) DEFAULT NULL,
   `buku_penulis` varchar(30) DEFAULT NULL,
   `buku_author` smallint(3) DEFAULT NULL,
   `buku_kategori` varchar(10) DEFAULT NULL,
   `buku_bahasa` varchar(10) DEFAULT NULL,
   `tanggal_upload` date DEFAULT NULL,
   PRIMARY KEY (`buku_id`),
+  KEY `fk_author` (`buku_author`),
   KEY `fk_kategori` (`buku_kategori`),
-  KEY `fk_member` (`buku_author`),
-  CONSTRAINT `fk_kategori` FOREIGN KEY (`buku_kategori`) REFERENCES `kategori` (`kategori_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_member` FOREIGN KEY (`buku_author`) REFERENCES `member` (`member_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+  CONSTRAINT `fk_author` FOREIGN KEY (`buku_author`) REFERENCES `admin` (`admin_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_kategori` FOREIGN KEY (`buku_kategori`) REFERENCES `kategori` (`kategori_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*Data for the table `buku` */
+/*Data for the table `buku_admin` */
 
-insert  into `buku`(`buku_id`,`buku_judul`,`buku_penulis`,`buku_author`,`buku_kategori`,`buku_bahasa`,`tanggal_upload`) values (1,'Belajar Mengiklaskan','Pak Atang',10,'01','Indonesia','2017-01-01'),(2,'Kamus Besar Bahasa Indonesia','Pak Robi',10,'02','Indonesia','2017-01-02'),(3,'Letak Segitiga Muda','Pak Samsul',3,'03','Indonesia','2017-01-03'),(4,'Lembar Kerja Siswa','Pak I Made',4,'04','Indonesia','2017-01-04'),(5,'Buku Teks','Pak Reza',4,'05','Indonesia','2017-01-05'),(6,'Perekenomian Indonesia 2017','Pak Asep',3,'06','Indonesia','2017-01-06'),(7,'Kue Is Live','Pak Jaka',5,'07','Indonesia','2017-01-07'),(8,'Undang Udang Indonesia','Pak Kanto',2,'08','Indonesia','2017-01-08'),(9,'Ki Joko Bodo','Pak Rede',3,'09','Indonesia','2017-01-09'),(10,'Mengenal Penyakit Kulit','Pak Roso',2,'10','Indonesia','2017-01-10'),(11,'Bahasa C#','Pak Atep',10,'11','Indonesia','2017-01-11'),(12,'Masakan Padang','Pak Robi',4,'12','Indonesia','2017-01-12'),(13,'Mengelola Hotel Di Indonesia','Pak Edi',5,'13','Indonesia','2017-01-13'),(14,'Mengenal Diri Sendiri','Pak Ade',2,'14','Indonesia','2017-01-14'),(15,'Tabloid Remaja','Pak Rodi',3,'15','Indonesia','2017-01-15'),(16,'Komputer Generasi Ke 5','Pak Ius',2,'16','Indonesia','2017-01-16'),(17,'Sastra Indonesia','Pak Opik',10,'17','Indonesia','2017-01-17'),(18,'Sejarah Indonesia','Pak Didit',3,'18','Indonesia','2017-01-18'),(19,'Belajar Photoshop','Pak Garen',4,'19','Indonesia','2017-01-19'),(20,'Belajar Java','Pak Draven',5,'20','Indonesia','2017-01-20'),(21,'Pengemanan Website','Pak Firaun',4,'21','Indonesia','2017-01-21'),(22,'Mengenal Linux','Pak Pajero',5,'22','Indonesia','2017-01-22'),(23,'Kumpulan Software Terbaik 2017','Pak Preman',3,'23','Indonesia','2017-01-23'),(24,'Komputer','Pak Aoi',10,'24','Indonesia','2017-01-24'),(25,'Mengenal PHP','Pak Momoko',3,'27','Indonesia','2017-01-25');
+insert  into `buku_admin`(`buku_id`,`buku_judul`,`buku_penulis`,`buku_author`,`buku_kategori`,`buku_bahasa`,`tanggal_upload`) values ('A_01','Numerical Mathematic And Computing','Ward Cheney',1,'16','Inggris','0000-00-00');
 
 /*Table structure for table `kategori` */
 
@@ -91,7 +112,7 @@ CREATE TABLE `member` (
   `member_email` varchar(40) DEFAULT NULL,
   `member_password` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`member_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `member` */
 

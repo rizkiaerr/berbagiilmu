@@ -254,6 +254,7 @@ overflow: hidden;
                                                             <div class="divider">
                                                             </div>
                                                             <a href="profil.php" class="btn btn-primary btn-sm active">View Profile</a>
+                                                            <a href="Pengaturan.php" class="btn btn-primary btn-sm active">Pengaturan</a>
                                                         </div>
                                                     </div>
                                                 </div>

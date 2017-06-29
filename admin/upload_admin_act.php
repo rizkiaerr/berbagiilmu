@@ -24,8 +24,9 @@ include "config.php";
 	$nama_file=$buku_judul.'-'.$buku_jenis.'.pdf';
  	$alamatfile=$uploadir.$nama_file;
 
+
  	if(move_uploaded_file($tmp, $alamatfile)){
- 	$sql="INSERT INTO buku (buku_id,buku_judul,buku_penulis,buku_author,buku_kategori,buku_bahasa,buku_file) VALUES ('','$buku_judul','$buku_penulis','$buku_author','$buku_id','$buku_bahasa','$nama_file')";
+ 	$sql="INSERT INTO buku_admin (buku_id,buku_judul,buku_penulis,buku_author,buku_kategori,buku_bahasa,tanggal_upload) VALUES ('$buku_judul','$buku_penulis','$buku_author','$buku_id','$buku_bahasa','$nama_file')";
 	$res=mysqli_query($link,$sql);
  	}
 

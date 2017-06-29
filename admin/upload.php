@@ -43,7 +43,28 @@
     <form action="http://localhost/berbagiilmu/upload_act.php" method="POST" enctype="multipart/form-data">
       <?php echo $out; ?>
       <div class="col-sm-12">
+              <?php
+                $query="SELECT buku_id FROM buku_admin ORDER BY buku_id DESC LIMIT 1";
+                //$data=mysqli_fetch_row($res);
+                if ($res = mysqli_query($link, $query)){
+                  // Fetch one and one row
+                  while ($row=mysqli_fetch_row($res))
+                    {
+                    //printf ("%s\n",$row[0]);
+                      $admin_buku_id = substr($row[0], strpos($row[0], "_") + 1);
+                      $admin_buku_id=(int)$admin_buku_id;
+                      $admin_buku_id++;
+                    }
+                  // Free result set
+                  //mysqli_free_result($result);
+                }
+                $tanggal = date("Y-m-d");
+                //echo $tanggal;
+                //echo "$admin_buku_id";
+              ?>
+             <input type="hidden" name="buku_id" value="<?php echo "A_$admin_buku_id"?>" readonly="readonly"> 
              <input type="hidden" name="buku_author" value="<?php echo "$admin_id"?>" readonly="readonly"> 
+             <input type="hidden" name="tanggal_upload" value="<?php echo "$tanggal"?>" readonly="readonly">
               <div class="form-group">
                 <label>Judul Buku</label>
                 <input type="text" name="buku_judul" placeholder="Masukan judul buku..." class="form-control" required>
@@ -110,7 +131,7 @@
       <?php echo $out; ?>
       <div class="col-sm-12">
              <input type="hidden" name="buku_author" value="<?php echo "$member_id"?>"> 
-             <input type="hidden" name="buku_kategori" value="28" > 
+             <input type="hidden" name="buku_kategori" value="29" > 
                <div class="form-group">
                 <label>File</label>
                   <input type="file" name="buku_file" class="form-control" required>

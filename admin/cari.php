@@ -20,7 +20,7 @@
 			<?php
 				//$link = koneksi_db();
 				if(empty($_POST['txt_cari'])){
-			    	$query = "select * from buku where buku_kategori = (select kategori_id from kategori where kategori_jenis='".$isi_cari."')";
+			    	$query = "select * from buku_admin where buku_kategori = (select kategori_id from kategori where kategori_jenis='".$isi_cari."')";
 			    } else {
 			    	$query = "select * from buku where buku_judul LIKE '%".$isi_cari."%' or buku_penulis LIKE '%".$isi_cari."%'";
 			    }
@@ -47,6 +47,7 @@
 			<?php
 				}
 			?>
+
 		</div>
 	</div>
 	
