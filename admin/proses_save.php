@@ -15,5 +15,5 @@ include "config.php";
 mysqli_query($link,"INSERT INTO member(member_id, member_nama, member_jk, member_ttl, member_tglahir, member_alamat, member_username, member_tlp, member_email, member_password) VALUES
 		     ('$member_id','$member_nama','$member_jk','$member_ttl','$member_tglahir','$member_alamat','$member_username','$member_tlp','$member_email','$member_password')");
 
-header('location:member.php'); 
+header('location:index.php'); 
 ?>

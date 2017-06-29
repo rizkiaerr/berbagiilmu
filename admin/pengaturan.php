@@ -184,8 +184,3 @@
         });
       });
 </script>
-
-</center>
-</div>
-</div>
-</div>

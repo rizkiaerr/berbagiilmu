@@ -9,14 +9,6 @@ if((empty($_SESSION['member_email']))AND(empty($_SESSION['admin_email']))){ //LO
   <?php
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Berbagiilmu</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-
   <style type="text/css">
   body{
     background-color:white;
@@ -126,18 +118,20 @@ if((empty($_SESSION['member_email']))AND(empty($_SESSION['admin_email']))){ //LO
     }
     /* End of Navbar Color */
   </style>
-</head>
-<body>
 
 <?php
 if(!empty($_SESSION['admin_email']))
 { 
   $admin=$_SESSION['admin_email'];
   $query=mysqli_query($link,"SELECT * FROM admin where admin_email='$admin'");
+  //$query1=mysqli_query($link,"SELECT CONCAT(admin_ttl,admin_tglahir)AS tgl_lahir FROM admin where admin_email='$admin'");
+  //$row1=mysqli_fetch_array($query1);
+
   if(!$query){
     die("Gagal : ".mysql_error());
   }
   if($row=mysqli_fetch_array($query)){
+      $id=$row['admin_id'];
       $nama=$row['admin_nama'];
       $tgl=$row['admin_tglahir'];
       $id=$row['admin_username'];
@@ -145,6 +139,8 @@ if(!empty($_SESSION['admin_email']))
       $jk=$row["admin_jk"];
       $alamat=$row["admin_alamat"];
       $telp=$row["admin_tlp"];
+      $ttl=$row['admin_ttl'];   
+      $tgl_lahir = date('d F Y', strtotime($tgl));
       /*if($row['nama_foto']==""){
        $foto="img/pict_default.png";
       } )
@@ -169,6 +165,10 @@ if(!empty($_SESSION['admin_email']))
 
     <div class="col-sm-12" style="border:0px;">
       <div class="panel panel-primary">
+            <div class="pull-right">
+              <a href="profil_edit.php" style="color: white">
+              <span class="glyphicon glyphicon-edit" style="color: white"></span>  Update Data Diri </a>
+            </div>
        <div class="panel-heading" style="background-color:black; border-color:black"></div>
        <div class="panel-body">
          <table class="col-sm-12">
@@ -178,7 +178,7 @@ if(!empty($_SESSION['admin_email']))
             </tr>
           <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Tanggal Lahir </th>
             <tr class="col-sm-12">
-              <td style="float:right;"><?php echo $tgl;?></td>
+              <td style="float:right;"><?php echo $ttl." , ".$tgl_lahir;?></td>
             </tr>
           <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Jenis Kelamin </th>
             <tr class="col-sm-12">
@@ -192,11 +192,11 @@ if(!empty($_SESSION['admin_email']))
             <tr class="col-sm-12">
               <td style="float:right;"><?php echo $telp;?></td>
             </tr>
-          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Jumlah Post </th>
+<!--          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Jumlah Post </th>
             <tr class="col-sm-12">
               <td style="float:right;"><?php echo ""?></td>
             </tr>
-
+-->
          </table>
        </div>
       </div>
@@ -213,6 +213,7 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
     die("Gagal : ".mysql_error());
   }
   if($row=mysqli_fetch_array($query)){
+      $id=$row['member_id'];
       $nama=$row['member_nama'];
       $tgl=$row['member_tglahir'];
       $id=$row['member_username'];
@@ -220,6 +221,8 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
       $jk=$row["member_jk"];
       $alamat=$row["member_alamat"];
       $telp=$row["member_tlp"];
+      $ttl=$row['member_ttl'];   
+      $tgl_lahir = date('d F Y', strtotime($tgl));
       /*if($row['nama_foto']==""){
        $foto="img/pict_default.png";
       } )
@@ -244,7 +247,13 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
 
     <div class="col-sm-12" style="border:0px;">
       <div class="panel panel-primary">
-       <div class="panel-heading" style="background-color:black; border-color:black"></div>
+            <div class="pull-right">
+              <a href="profil_edit.php" style="color: white">
+              <span class="glyphicon glyphicon-edit" style="color: white"></span>  Update Data Diri </a>
+            </div>
+       <div class="panel-heading" style="background-color:black; border-color:black">
+       </div>
+
        <div class="panel-body">
          <table class="col-sm-12">
           <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Nama </th>
@@ -253,7 +262,7 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
             </tr>
           <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Tanggal Lahir </th>
             <tr class="col-sm-12">
-              <td style="float:right;"><?php echo $tgl;?></td>
+              <td style="float:right;"><?php echo $ttl." , ".$tgl_lahir;?></td>
             </tr>
           <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Jenis Kelamin </th>
             <tr class="col-sm-12">
@@ -311,5 +320,5 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
   </div>
 </div>
 </div>
-</body>
-</html>
+</div>
+</div>
