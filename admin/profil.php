@@ -276,10 +276,6 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
             <tr class="col-sm-12">
               <td style="float:right;"><?php echo $telp;?></td>
             </tr>
-          <th class="col-sm-12" style="border-bottom:1px solid black; float:left;">Jumlah Post </th>
-            <tr class="col-sm-12">
-              <td style="float:right;"><?php echo ""?></td>
-            </tr>
 
          </table>
        </div>
