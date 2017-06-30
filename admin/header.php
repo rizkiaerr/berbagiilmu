@@ -96,6 +96,40 @@ padding: 0px;
 overflow: hidden;
 }
     </style>
+
+<!-- CSS Upload Foto -->
+<style>
+.fileupload {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    background: ...; /* and other things to make it pretty */
+}
+
+.fileupload input {
+    position: absolute;
+    top: 0;
+    right: 0; /* not left, because only the right part of the input seems to
+                 be clickable in some browser I can't remember */
+    cursor: pointer;
+    opacity: 0.0;
+    filter: alpha(opacity=0); /* and all the other old opacity stuff you
+                                 want to support */
+    font-size: 300px; /* wtf, but apparently the most reliable way to make
+                         a large part of the input clickable in most browsers */
+    height: 200px;
+}
+</style>
+
+<script type="text/javascript">
+function HandleBrowseClick(input_image)
+{
+    var fileinput = document.getElementById(input_image);
+    fileinput.click();
+}     
+</script>
+
 </head>
 
 <body>
@@ -187,10 +221,19 @@ overflow: hidden;
                                                 <div class="navbar-content">
                                                     <div class="row">
                                                         <div class="col-md-5">
-                                                            <img src="http://placehold.it/120x120"
-                                                                alt="Alternate Text" class="img-responsive" />
+                                                            <form method="post" enctype="multipart/form-data" action="profil_change_foto.php">
+                                                            <div class="fileupload">
+                                                              <input type="hidden" name="member_id" class="form-control" value="<?php echo $member_id; ?>" />
+                                                              <input type="hidden" name="member_email" class="form-control" value="<?php echo $member_email; ?>" />
+                                                              <input onchange="document.getElementById('image-preview').src=window.URL.createObjectURL(this.files[0])" accept="image/jpeg,image/png" type="file" title="Click for change photo" name="member_foto" />
+                                                                 <?php
+                                                                 echo "<img src='foto/member/".$member_foto."' id='image-preview' alt='your foto' class='img-responsive' >";
+                                                                 ?>
+                                                            </div>
                                                             <p class="text-center small">
-                                                                <a href="#">Change Photo</a></p>
+                                                                <input type="submit" value="Change Photo" class="btn btn-default btn-sm" size="20">
+                                                            </form>
+                                                            </p>
                                                         </div>
                                                         <div class="col-md-7">
                                                             <span><?php echo "$member_nama"?></span>
@@ -242,10 +285,19 @@ overflow: hidden;
                                                 <div class="navbar-content">
                                                     <div class="row">
                                                         <div class="col-md-5">
-                                                            <img src="http://placehold.it/120x120"
-                                                                alt="Alternate Text" class="img-responsive" />
+                                                           <form method="post" enctype="multipart/form-data" action="profil_change_foto.php">
+                                                            <div class="fileupload">
+                                                              <input type="hidden" name="admin_id" class="form-control" value="<?php echo $admin_id; ?>" />
+                                                              <input type="hidden" name="admin_email" class="form-control" value="<?php echo $admin_email; ?>" />
+                                                              <input onchange="document.getElementById('image-preview').src=window.URL.createObjectURL(this.files[0])" accept="image/jpeg,image/png" type="file" title="Click for change photo" name="admin_foto" />
+                                                                 <?php
+                                                                 echo "<img src='foto/admin/".$admin_foto."' id='image-preview' alt='your foto' class='img-responsive' >";                                
+                                                                  ?>
+                                                            </div>
                                                             <p class="text-center small">
-                                                                <a href="#">Change Photo</a></p>
+                                                                <input type="submit" value="Change Photo" class="btn btn-default btn-sm" size="20">
+                                                            </form>
+                                                            </p>
                                                         </div>
                                                         <div class="col-md-7">
                                                             <span><?php echo "$admin_nama"?></span>
@@ -282,29 +334,7 @@ overflow: hidden;
         <!-- /.container -->
 
     </nav>
-    <!--/navbar-->
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!--/navbar-->      
 
  <!-- BEGIN # MODAL LOGIN -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

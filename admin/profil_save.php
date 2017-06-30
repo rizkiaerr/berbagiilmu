@@ -13,6 +13,7 @@ if(!empty($_SESSION['admin_email']))
 	$admin_username  = $_POST['admin_username'];
 	$admin_tlp 	 	 = $_POST['admin_tlp'];
 	$admin_email 	 = $_POST['admin_email'];
+	
 
 mysqli_query($link,"UPDATE admin SET admin_nama='$admin_nama', admin_jk='$admin_jk', admin_ttl='$admin_ttl', admin_tglahir='$admin_tglahir', admin_alamat='$admin_alamat', admin_username='$admin_username', admin_tlp='$admin_tlp', admin_email='$admin_email'  WHERE admin_id='$admin_id'");
 

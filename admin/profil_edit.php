@@ -35,14 +35,14 @@ if(!empty($_SESSION['admin_email']))
       $tlp=$row['admin_tlp'];
       $ttl=$row['admin_ttl'];   
       $tgl_lahir = date('d F Y', strtotime($tgl));
-      /*if($row['nama_foto']==""){
-       $foto="img/pict_default.png";
-      } )
-      else{
-       $foto = "core/upload/".$row['id_user']."/".$row['nama_foto'];
+
+      if($row['nama_foto']==""){
+       $foto="foto/pict_default.png";
       }
-      $count=mysqli_query($link,"SELECT * FROM post where id_user='$id'");
-      $count=mysqli_num_rows($count); */
+      else{
+       $foto = "foto/admin/".$row['admin_id']."/".$row['nama_foto'];
+      }
+
   } 
   ?>
   <div class="col-lg-12 well">

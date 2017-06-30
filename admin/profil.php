@@ -159,7 +159,11 @@ if(!empty($_SESSION['admin_email']))
     <div class="col-sm-12" style="border:0px;">
       <div class="panel panel-primary">
         <div class="panel-heading" style="background-color:black; border-color:black"></div>
-        <div class="panel-body"><img src="../image/default/profile.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-body">
+          <?php
+            echo "<img src='foto/admin/".$admin_foto."' id='image-preview' alt='your foto' class='img-responsive' style='width:100%'>"; 
+          ?>        
+        </div>
       </div>
     </div>
 
@@ -241,7 +245,11 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
     <div class="col-sm-12" style="border:0px;">
       <div class="panel panel-primary">
         <div class="panel-heading" style="background-color:black; border-color:black"></div>
-        <div class="panel-body"><img src="../image/default/profile.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-body">
+          <?php
+            echo "<img src='foto/member/".$member_foto."' id='image-preview' alt='your foto' class='img-responsive' >";
+          ?>
+        </div>
       </div>
     </div>
 
