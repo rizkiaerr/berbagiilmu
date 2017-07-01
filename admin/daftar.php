@@ -21,7 +21,7 @@
 
             <div class="form-group">
               <label for="Tempat Lahir">Tempat Lahir</label>
-              <input type="Text" name="member_ttl"  class="form-control" placeholder="Tanggal Lahir" required/>
+              <input type="Text" name="member_ttl"  class="form-control" placeholder="Tempat Lahir" required/>
             </div> 
 
             <div class="form-group">
