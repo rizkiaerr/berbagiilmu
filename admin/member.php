@@ -1,26 +1,29 @@
-<head>
 <?php 
 //    include 'cek.php';
   include 'header.php';
 ?>
 
+<?php
+  if (!empty($_SESSION['admin_email']))
+  {
+?>
+
 <div class="container">
-  <h2>Crud PHP 7 Menggunakan Modal Bootstrap (Popup)</h2>
-  <p>Bootstrap Modal  (Popup) By Aguzrybudy, Selasa 19 April 2016</p>
-  <p><a href="#" class="btn btn-success" data-target="#ModalAdd" data-toggle="modal">Daftar</a></p>      
+  <h2>Daftar Member</h2>
+  <br>
+  <form action="cari.php?cari=member" method="POST">
+  <input type="text" name="cari" placeholder="cari berdasarkan ..... "></input>
+  <input type="submit" class="btn btn-sm btn-default" value="Cari"></input>
+  </form>
+  <br>
+  <br>
 
 <table id="mytable" class="table table-bordered">
     <thead>
       <th> No </th>
       <th> Nama </th>
-      <th> Jenis Kelamin </th>
-      <th> Tempat Lahir </th>
-      <th> Tanggal Lahir </th>
-      <th> Alamat</th>
       <th> No Telephone</th>
-      <th> Username</th>
       <th> Email</th>
-      <th> Password</th>
       <th></th>
     </thead>
 
@@ -35,136 +38,19 @@
   <tr>
       <td><?php echo $no; ?></td>
       <td><?php echo  $r['member_nama']; ?></td>
-      <td><?php echo  $r['member_jk']; ?></td>
-      <td><?php echo  $r['member_ttl']; ?></td>
-      <td><?php echo  $r['member_alamat']; ?></td>
-      <td><?php echo  $r['member_tglahir']; ?></td>
       <td><?php echo  $r['member_tlp']; ?></td>
-      <td><?php echo  $r['member_username']; ?></td>
       <td><?php echo  $r['member_email']; ?></td>
-      <td><?php echo  $r['member_password']; ?></td>
       <td>
-         <a href="#" class='open_modal' id='<?php echo  $r['member_id']; ?>'>Edit</a>
-         <a href="#" onclick="confirm_modal('proses_delete.php?&member_id=<?php echo  $r['member_id']; ?>');">Delete</a>
+
+         <a href="#" class='open_modal btn btn-sm btn-default' id='<?php echo  $r['member_id']; ?>' ><span class="glyphicon glyphicon-eye-open"></span></a>
+         <a href="#"  class="btn btn-sm btn-default" onclick="confirm_modal('proses_delete.php?&member_id=<?php echo  $r['member_id']; ?>');"><span class="glyphicon glyphicon-trash"></span></a>
       </td>
   </tr>
 <?php } ?>
- 
-
-
 </table>
 </div>
 
-<!-- Modal Popup untuk Add--> 
-<div id="ModalAdd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title" id="myModalLabel">Add Data Using Modal Boostrap (popup)</h4>
-        </div>
-
-        <div class="modal-body">
-
-          <form action="proses_save.php" name="modal_popup" enctype="multipart/form-data" method="POST">           
-                <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="Nama Member">Nama Member</label>
-                    
-                    <input type="text" name="member_nama" class="form-control" placeholder="Nama Member" required/>
-                    <input type="hidden" name="member_id" type="text" class="form-control" value="<?php echo $data_last+1; ?>"/>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="Jenis Kelamin">Jenis Kelamin</label>
-                    <br>
-                    <input type="radio" name="member_jk" value="L" checked="checked"/> Laki-Laki
-                    <input type="radio" name="member_jk" value="P" /> Perempuan
-                </div>
-
-
-                <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="Tanggal Lahir">Tempat Lahir</label>
-                    <input type="text" name="member_ttl"  class="form-control" placeholder="Tempat Lahir" required/>
-                </div>
-
-               <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="Alamat">Tanggal Lahir</label>
-                    <input type="date" name="member_tglahir" class="form-control" placeholder="mm/dd/yyyy" required />
-                </div>
-
-                <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="Alamat">Alamat</label>
-                    <input type="text" name="member_alamat"  class="form-control" placeholder="Alamat" required/>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="No Telephone/Handphone">No Telephone/Handphone</label>
-                   <input type="text" name="member_tlp"  class="form-control" maxlength="13" placeholder="08xxxxxxxxxx" required/>
-                </div>
-                
-                <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="Username">Username</label>
-                  <input type="text" name="member_username" class="form-control" placeholder="username" required/>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="Email">Email</label>
-                   <input type="email" name="member_email"  class="form-control" placeholder="e.g samsudin@domain.com" required/>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 1px;">
-                  <label for="Password">Password</label>
-                   <input type="password" name="member_password"  class="form-control" required/>
-                </div>
-
-              <div class="modal-footer">
-                  <button class="btn btn-success" type="submit">
-                      Confirm
-                  </button>
-
-                  <button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
-                    Cancel
-                  </button>
-              </div>
-
-              </form>
-
-<!--
-          <form action="proses_save.php" name="modal_popup" enctype="multipart/form-data" method="POST">
-            
-                <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Modal Name">Modal Name</label>
-                  <input type="text" name="modal_name"  class="form-control" placeholder="Modal Name" required/>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Description">Description</label>
-                   <textarea name="description"  class="form-control" placeholder="Description" required/></textarea>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 20px;">
-                  <label for="Date">Date</label>
-                  <input type="text" name="date"  class="form-control" plcaceholder="Timestamp" disabled value="Timestamp" required/>
-                </div>
-
-              <div class="modal-footer">
-                  <button class="btn btn-success" type="submit">
-                      Confirm
-                  </button>
-
-                  <button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
-                    Cancel
-                  </button>
-              </div>
-
-              </form>
--->
-           
-
-            </div>
-
-           
+            </div>           
         </div>
     </div>
 </div>
@@ -220,9 +106,10 @@
     
 </script>
 
+<?php 
+}
+?>
+
 <?php
   include "footer.php";
 ?>
-
-
-

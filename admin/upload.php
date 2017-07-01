@@ -58,13 +58,14 @@
                   // Free result set
                   //mysqli_free_result($result);
                 }
+                date_default_timezone_set('Asia/Jakarta');
                 $tanggal = date("Y-m-d");
                 //echo $tanggal;
                 //echo "$admin_buku_id";
               ?>
-             <input type="hidden" name="buku_id" value="<?php echo "A_$admin_buku_id"?>" readonly="readonly"> 
-             <input type="hidden" name="buku_author" value="<?php echo "$admin_id"?>" readonly="readonly"> 
-             <input type="hidden" name="tanggal_upload" value="<?php echo "$tanggal"?>" readonly="readonly">
+             <input type="text" name="buku_id" value="<?php echo "A_$admin_buku_id"?>" readonly="readonly"> 
+             <input type="test" name="buku_author" value="<?php echo "$admin_id"?>" readonly="readonly"> 
+             <input type="text" name="tanggal_upload" value="<?php echo "$tanggal"?>" readonly="readonly">
               <div class="form-group">
                 <label>Judul Buku</label>
                 <input type="text" name="buku_judul" placeholder="Masukan judul buku..." class="form-control" required>
@@ -130,8 +131,8 @@
     <form action="http://localhost/berbagiilmu/upload_act.php" method="POST" enctype="multipart/form-data">
       <?php echo $out; ?>
       <div class="col-sm-12">
-             <input type="hidden" name="buku_author" value="<?php echo "$member_id"?>"> 
-             <input type="hidden" name="buku_kategori" value="29" > 
+             <input type="text" name="buku_author" value="<?php echo "$member_id"?>"> 
+             <input type="text" name="buku_kategori" value="29" > 
                <div class="form-group">
                 <label>File</label>
                   <input type="file" name="buku_file" class="form-control" required>
