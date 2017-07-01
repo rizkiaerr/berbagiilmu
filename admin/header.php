@@ -273,6 +273,27 @@ function HandleBrowseClick(input_image)
                 extract($ambil);
                 ?>
                 <ul class="nav navbar-nav navbar-right">
+		<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-times fa-fw"></i>
+                    List
+                    <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li>
+                        <a href="buku.php">
+                        <i class="fa fa-book fa-fw"></i>
+                        List Buku
+                        </a>
+                    </li>
+                    <li>
+                        <a href="member.php">
+                        <i class="fa fa-task fa-fw"></i>
+                        List Member
+                        </a>
+                    </li>
+                    </ul>
+                </li>
                 <li><a href="upload.php">Upload</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
