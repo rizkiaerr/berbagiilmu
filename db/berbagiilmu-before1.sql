@@ -1,1 +1,0 @@
-UPDATE admin SET admin_nama='aris rianti', admin_jk='P', admin_ttl='Banjar', admin_tglahir='12/02/1996', admin_alamat='bandung', admin_username='admin1', admin_tlp='999212121', admin_email='arisrianti@gmail.com'  WHERE admin_id='2'
