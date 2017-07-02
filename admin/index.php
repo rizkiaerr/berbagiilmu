@@ -16,19 +16,19 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill" style="background-image:url('../image/slider/s1.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>Download Ebook Secara Gratis</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill" style="background-image:url('../image/slider/s2.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>Upload Karyamu</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('../image/slider/s3.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>Biarkan bersinar</h2>
                 </div>
