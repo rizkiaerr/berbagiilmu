@@ -131,8 +131,8 @@
     <form action="http://localhost/berbagiilmu/upload_act.php" method="POST" enctype="multipart/form-data">
       <?php echo $out; ?>
       <div class="col-sm-12">
-             <input type="text" name="buku_author" value="<?php echo "$member_id"?>"> 
-             <input type="text" name="buku_kategori" value="29" > 
+             <input type="hidden" name="buku_author" value="<?php echo "$member_id"?>"> 
+             <input type="hidden" name="buku_kategori" value="29" > 
                <div class="form-group">
                 <label>File</label>
                   <input type="file" name="buku_file" class="form-control" required>

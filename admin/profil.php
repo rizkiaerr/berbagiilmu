@@ -294,7 +294,7 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
   }
   ?>
   <div class="col-sm-8">
-  <a href="post.php">
+  <a href="upload.php">
   <input type="submit" name="signup" class="btn btn-danger btn-md" value="Buat Post Baru !" style="margin-top:10px;margin-bottom:15px;width:100%;">
   </a>  
 
@@ -302,20 +302,7 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
   <?php
    
   ?>
-    <form method="get" action="detailpost.php?id=<?php echo $id_post ?>" name="">
-    <a href="javascript:;" onclick="parentNode.submit();">
-    <input type="hidden" name="id" value="<?php echo $id_post ?>">
-    <div class="col-sm-6" style="border:0px;margin: 0px -10px 0px 5px;">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-        <center>
-        <a href="baca.php"><embed width="800" height="800" src="../buku/Teknologi/buku1.pdf" type="application/pdf" class="img-responsive" style="height:220px" alt="Image"></embed>Lihat Full</a>
-        </center></div>
-        <div class="panel-footer"></div>
-      </div>
-    </div>
-    </a>
-    </form>
+    
   <?php
     
   ?>

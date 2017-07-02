@@ -2,6 +2,8 @@
 	include 'header.php';
 	//include 'koneksi.php';
 
+	$nama=$_GET['nama'];
+	$foto=$_GET['foto'];
 	$kategori=$_GET['kategori'];
 	$judul=$_GET['judul'];
 	$judul=urldecode($judul);
@@ -20,16 +22,16 @@
 			<hr>
 			<div class="navbar-form navbar-left">
 				<a href="#">
-					<img src="../image/default/profile.png" class="img-circle" width="80" height="80">
-					Feki Pangestu Wijaya 
+					<img src="foto/admin/<?php echo "$foto"; ?>" class="img-circle" width="80" height="80">
+					<?php echo "$nama"; ?> 
 				</a>
 			</div>
 			
 			<div class="navbar-form navbar-right">
 				<br>
-				<a href="https://plus.google.com/share?url=http://www.kang-cahya.com/p/advertiser-page.html" class="btn btn-danger btn-md">Google+</a>
-				<a href="http://twitter.com/share?url=http://www.kang-cahya.com/2015/04/cara-membuat-tombol-share-to-social.html" class="btn btn-info btn-md">Twitter</a>
-				<a href="http://www.facebook.com/sharer.php?u=http://www.kang-cahya.com/p/advertiser-page.html" class="btn btn-primary btn-md">Facebook</a>
+				<a href="https://plus.google.com/share?url=http://www.berbagiilmu.com/admin/baca.php?kategori=$kategori&judul=$judul.php" class="btn btn-danger btn-md">Google+</a>
+				<a href="http://twitter.com/share?url=http://www.berbagiilmu.com/admin/baca.php?kategori=$kategori&judul=$judul.php" class="btn btn-info btn-md">Twitter</a>
+				<a href="http://www.facebook.com/sharer.php?u=http://www.berbagiilmu.com/admin/baca.php?kategori=$kategori&judul=$judul.php" class="btn btn-primary btn-md">Facebook</a>
 			</div>
 		</div>
 		
@@ -39,7 +41,7 @@
 			</h2>
 			<?php
 				//$link = koneksi_db();
-				$query = "select * from buku";
+				$query = "SELECT buku_id, buku_judul FROM buku_admin LIMIT 4";
 				$res = mysqli_query($link, $query);
 			?>
 			<?php

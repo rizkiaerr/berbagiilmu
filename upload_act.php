@@ -19,13 +19,14 @@ if ($_POST['buku_kategori']=="29"){
  	$type			 = $_FILES['buku_file']['type'];
 	
 	$uploadir="buku/29/";
+	$namafile=substr($file, 0, -4);
 	$alamatfile=$uploadir.$file;
     date_default_timezone_set('Asia/Jakarta');
     $tanggal = date("Y-m-d");
                
 
  	if(move_uploaded_file($tmp, $alamatfile)){
-		mysqli_query($link,"INSERT INTO buku (buku_id,buku_judul,buku_author,buku_kategori,tanggal_upload) VALUES ('','$file',$buku_author,'$buku_kategori','$tanggal')");
+		mysqli_query($link,"INSERT INTO buku (buku_id,buku_judul,buku_author,buku_kategori,tanggal_upload) VALUES ('','$namafile',$buku_author,'$buku_kategori','$tanggal')");
  		header("Location: admin/upload.php?auth=123131adajjadl131jakdl12");
                 //$data=mysqli_fetch_row($res);
  		$query="SELECT buku_id FROM buku ORDER BY buku_id DESC LIMIT 1";
@@ -79,7 +80,7 @@ if ($_POST['buku_kategori']=="29"){
 		\Cloudinary\Uploader::upload($absolute_path, $c_buku);
  		header("Location: admin/upload.php?auth=123131adajjadl131jakdl12");	
 	}else{
-		header("Location: admin/upload.php?auth=e2eu8932dh73q3eh822e2qdq");
+		header("Location: admin/upload.php?auth=e2eu8932dh73q3eh822e2qdq&'$alamatfile'");
 	}
 
 	//\Cloudinary\Uploader::upload($_FILES["buku_file"]["tmp_name"]);
