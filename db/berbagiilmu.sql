@@ -54,11 +54,11 @@ CREATE TABLE `buku` (
   KEY `fk_kategori_member` (`buku_kategori`),
   CONSTRAINT `fk_kategori_member` FOREIGN KEY (`buku_kategori`) REFERENCES `kategori` (`kategori_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_member` FOREIGN KEY (`buku_author`) REFERENCES `member` (`member_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 /*Data for the table `buku` */
 
-insert  into `buku`(`buku_id`,`buku_judul`,`buku_author`,`buku_kategori`,`tanggal_upload`) values (1,'Belajar Mengiklaskan',10,'29','2017-01-01'),(2,'Kamus Besar Bahasa Indonesia',10,'29','2017-01-02'),(3,'Letak Segitiga Muda',3,'29','2017-01-03'),(4,'Lembar Kerja Siswa',4,'29','2017-01-04'),(5,'Buku Teks',4,'29','2017-01-05'),(6,'Perekenomian Indonesia 2017',3,'29','2017-01-06'),(7,'Kue Is Live',5,'29','2017-01-07'),(8,'Undang Udang Indonesia',2,'29','2017-01-08'),(9,'Ki Joko Bodo',3,'29','2017-01-09'),(10,'Mengenal Penyakit Kulit',2,'29','2017-01-10'),(11,'Bahasa C#',10,'29','2017-01-11'),(12,'Masakan Padang',4,'29','2017-01-12'),(13,'Mengelola Hotel Di Indonesia',5,'29','2017-01-13'),(14,'Mengenal Diri Sendiri',2,'29','2017-01-14'),(15,'Tabloid Remaja',3,'29','2017-01-15'),(16,'Komputer Generasi Ke 5',2,'29','2017-01-16'),(17,'Sastra Indonesia',10,'29','2017-01-17'),(18,'Sejarah Indonesia',3,'29','2017-01-18'),(19,'Belajar Photoshop',4,'29','2017-01-19'),(20,'Belajar Java',5,'29','2017-01-20'),(21,'Pengemanan Website',4,'29','2017-01-21'),(22,'Mengenal Linux',5,'29','2017-01-22'),(23,'Kumpulan Software Terbaik 2017',3,'29','2017-01-23'),(24,'Komputer',10,'29','2017-01-24'),(25,'Mengenal PHP',3,'29','2017-01-25'),(29,'Solution Manual- Operating System Concepts.pdf',11,'29','2017-06-29'),(30,'Solution Manual- Operating System Concepts.pdf',11,'29','2017-06-29'),(31,'Solution Manual- Operating System Concepts.pdf',11,'29','2017-06-29'),(32,'Solution Manual- Operating System Concepts.pdf',11,'29','2017-06-29'),(33,'Solution Manual- Operating System Concepts.pdf',11,'29','2017-06-29'),(34,'Solution Manual- Operating System Concepts.pdf',11,'29','2017-06-29'),(35,'Solution Manual- Operating System Concepts.pdf',11,'29','2017-06-29'),(36,'Solution Manual- Operating System Concepts.pdf',11,'29','2017-06-29');
+insert  into `buku`(`buku_id`,`buku_judul`,`buku_author`,`buku_kategori`,`tanggal_upload`) values (41,'belajar gitar dasar disertai gambar',12,'29','2017-07-02');
 
 /*Table structure for table `buku_admin` */
 
@@ -67,7 +67,7 @@ DROP TABLE IF EXISTS `buku_admin`;
 CREATE TABLE `buku_admin` (
   `buku_id` varchar(5) NOT NULL,
   `buku_judul` varchar(50) DEFAULT NULL,
-  `buku_penulis` varchar(30) DEFAULT NULL,
+  `buku_penulis` varchar(50) DEFAULT NULL,
   `buku_author` smallint(3) DEFAULT NULL,
   `buku_kategori` varchar(10) DEFAULT NULL,
   `buku_bahasa` varchar(10) DEFAULT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE `buku_admin` (
 
 /*Data for the table `buku_admin` */
 
-insert  into `buku_admin`(`buku_id`,`buku_judul`,`buku_penulis`,`buku_author`,`buku_kategori`,`buku_bahasa`,`tanggal_upload`) values ('A_01','Numerical Mathematic And Computing','Ward Cheney',1,'16','Inggris','0000-00-00'),('A_2','An Introdiction to Relational Database Theory','Hugh Darwen',1,'20','Inggris','2017-06-29'),('A_3','Basic English Grammar','Anne Seaton',1,'02','Inggris','2017-06-30');
+insert  into `buku_admin`(`buku_id`,`buku_judul`,`buku_penulis`,`buku_author`,`buku_kategori`,`buku_bahasa`,`tanggal_upload`) values ('A_01','Numerical Mathematic And Computing','Ward Cheney',1,'16','Inggris','0000-00-00'),('A_02','An Introdiction to Relational Database Theory','Hugh Darwen',1,'20','Inggris','2017-06-29'),('A_03','Basic English Grammar','Anne Seaton',1,'02','Inggris','2017-06-30'),('A_04','English For English Speakers Beginner','bookboon',1,'02','Inggris','2017-07-01'),('A_05','International Financial Reporting','Marco Mongiello',1,'06','Inggris','2017-07-01'),('A_06','Cost Anaysis','Christopher J. Skousen',1,'06','Inggris','2017-07-01'),('A_07','Introduction to Managerial Accounting','Christopher J. Skousen',1,'06','Inggris','2017-07-01'),('A_08','Engineering Mathematics','Christopher C. Tisdell',1,'16','Inggris','2017-07-01'),('A_09','Introduction to Complex Numbers','Christopher C. Tisdell',1,'16','Inggris','2017-07-01'),('A_10','Mengapa Kita Shalat','Yufig',1,'01','Indonesia','2017-07-02'),('A_11','Meraih Surga Bulan Ramadhan','Syaikh Muhammad bin Shalih Al-Utsaimin',1,'01','Indonesia','2017-07-02'),('A_12','Riwayat Hidup Yasodhara Putri Yang Mulia','Upa Sasanasena Seng Hansen',1,'03','Indonesia','2017-07-02');
 
 /*Table structure for table `kategori` */
 
@@ -95,7 +95,7 @@ CREATE TABLE `kategori` (
 
 /*Data for the table `kategori` */
 
-insert  into `kategori`(`kategori_id`,`kategori_jenis`) values ('01','Agama'),('02','Bahasa dan Kamus'),('03','Biografi'),('04','Buku Sekolah'),('05','Buku Teks'),('06','Ekonomi dan Manajemen'),('07','Hobi dan Usaha'),('08','Hukum dan Undang-Undang'),('09','Inspirasi dan Spiritual'),('10','Kesehatan dan Lingkungan'),('11','Komputer dan Internet'),('12','Masakan dan Makanan'),('13','Perhotelan dan Pariwisata'),('14','Prikologi dan Pengembangan Dir'),('15','Remaja'),('16','Sains dan Teknologi'),('17','Sastra dan Filsafat'),('18','Sejarah dan Budaya'),('19','Animasi dan Desain'),('20','Pemrograman'),('21','Security'),('22','Sistem Operasi'),('23','Software'),('24','Hardware'),('25','Tools & Utility'),('26','Web Design'),('27','Web Programming'),('28','Lainnya'),('29','Other');
+insert  into `kategori`(`kategori_id`,`kategori_jenis`) values ('01','Agama'),('02','Bahasa dan Kamus'),('03','Biografi'),('04','Buku Sekolah'),('05','Buku Teks'),('06','Ekonomi dan Manajemen'),('07','Hobi dan Usaha'),('08','Hukum dan Undang-Undang'),('09','Inspirasi dan Spiritual'),('10','Kesehatan dan Lingkungan'),('11','Komputer dan Internet'),('12','Masakan dan Makanan'),('13','Perhotelan dan Pariwisata'),('14','Prikologi'),('15','Remaja'),('16','Sains dan Teknologi'),('17','Sastra dan Filsafat'),('18','Sejarah dan Budaya'),('19','Animasi dan Desain'),('20','Pemrograman'),('21','Security'),('22','Sistem Operasi'),('23','Software'),('24','Hardware'),('25','Tools & Utility'),('26','Web Design'),('27','Web Programming'),('28','Lainnya'),('29','Other');
 
 /*Table structure for table `member` */
 
@@ -112,13 +112,13 @@ CREATE TABLE `member` (
   `member_username` varchar(20) DEFAULT NULL,
   `member_email` varchar(40) DEFAULT NULL,
   `member_password` varchar(40) DEFAULT NULL,
-  `member_foto` varchar(40) DEFAULT NULL,
+  `member_foto` varchar(40) DEFAULT 'default.png',
   PRIMARY KEY (`member_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 /*Data for the table `member` */
 
-insert  into `member`(`member_id`,`member_nama`,`member_jk`,`member_ttl`,`member_tglahir`,`member_alamat`,`member_tlp`,`member_username`,`member_email`,`member_password`,`member_foto`) values (2,'aris aa','L','bandung','2017-05-18','bandung 3','229121212','aaramdhan1','cek2@gmail.com','12312',NULL),(3,'aris arianto','L','jakarta','1996-02-12','rancaekek','88812122','aaramdhan2','arisramdhan13@gmail.com','jangantau123',NULL),(4,'rini','P','bandung','2017-05-21','bandung 4','881221211','rini2','rini@gmail.com','12',NULL),(5,'roni','L','surabaya','2017-05-18','bandung 5','881244211','roni3','roni@gmail.com','123',NULL),(7,'aa','','1999-10-12',NULL,'cimohai',NULL,NULL,'fleqsy_afc@yahoo.com','asdasdf',NULL),(8,'asdasdf','L','bandung','2011-12-12','bandung','89695686313','asdasdf','fleqsy_afc@yahoo.com','259a2d1f68fef2c2b38e',NULL),(9,'asdasd','L','bandung','2011-12-12','bandung','89695686313','asdasd','fleqsy_afc@yahoo.com','a8f5f167f44f4964e6c998dee827110c',NULL),(10,'Ruru','P','Bandung','1996-01-09','cek edit seluruh database ke 1 januari','8182341234','rina1','januari@gmail.com','',NULL),(11,'abraham','L','bandung','2010-12-10','bandung','89695686313','abraham','abraham@gmail.com','248706c023957db08d14f39749879207',NULL);
+insert  into `member`(`member_id`,`member_nama`,`member_jk`,`member_ttl`,`member_tglahir`,`member_alamat`,`member_tlp`,`member_username`,`member_email`,`member_password`,`member_foto`) values (12,'Feki','L','Bandung','1990-12-20','Jalan Dago 99','89695686313','Aircraft','fekipangestu@yahoo.com','faf1818b0a5febc6eb37f90ada0e3d29','default.png');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
